@@ -1,0 +1,11 @@
+{
+  "model_name": "Weighted Logistic Regression",
+  "accuracy": 0.859375,
+  "training_date": "2025-09-26 19:20:47",
+  "n_samples": 253,
+  "class_distribution": [
+    61,
+    192
+  ],
+  "feature_dimension": 384
+}
