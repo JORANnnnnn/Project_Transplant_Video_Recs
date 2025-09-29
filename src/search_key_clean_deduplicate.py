@@ -197,7 +197,7 @@ def deduplicate_keywords(df: pd.DataFrame,
 
 # test
 if __name__ == "__main__":
-    df = pd.read_csv('../data/search key/google_trends/google_trends_all_uncleaned.csv')
+    df = pd.read_csv('../data/search key/raw/search_key_combined_unclean.csv')
     # Step 1: Filter roughly medical terms (with blacklist)
     df_filtered = filter_medical_terms(df)
     print("After medical filtering:", len(df_filtered))

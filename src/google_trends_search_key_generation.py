@@ -114,5 +114,5 @@ if __name__ == "__main__":
     base_keywords = ["heart transplant", "liver transplant", "kidney transplant","lung transplant", "pancreas transplant"]
     df = get_google_trends_data(base_keywords, data_dir="../data/search key/google_trends")
 
-    df.to_csv("../data/search key/google_trends/google_trends_all_uncleaned.csv", index=False)
+    df.to_csv("../data/search key/raw/google_trends_all_uncleaned.csv", index=False)
     print("✅ Saved data to google_trends_all_uncleaned.csv")

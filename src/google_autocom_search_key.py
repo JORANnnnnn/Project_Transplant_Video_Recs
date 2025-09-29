@@ -106,8 +106,8 @@ def save_to_csv(cluster_results, type=None):
     """
     import os
     
-    # Create data/search key directory if it doesn't exist
-    output_dir = "../data/search key"
+    # Create data/search key/raw directory if it doesn't exist
+    output_dir = "../data/search key/raw"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
         print(f"Created directory: {output_dir}")
