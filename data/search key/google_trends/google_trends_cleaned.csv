@@ -1,77 +1,157 @@
-search_term,type,source,variants
-pig heart,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant']",google trends,"['pig heart', 'heart transplant pig heart', 'pig heart transplant to human', 'pig heart transplant dies', 'pig heart transplant update', 'first pig heart transplant to-human', 'heart']"
-first heart transplant,"['heart transplant', 'lung transplant']",google trends,"['first heart transplant', 'the first heart transplant', 'dr victor chang first heart transplant', 'pigs heart transplant', 'where did the first heart transplant take place', 'heart transplant']"
-what is a heart transplant,['heart transplant'],google trends,"['what is a heart transplant', 'how much is a heart transplant']"
-heart transplant surgery,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant']",google trends,"['heart transplant surgery', 'how long is a heart transplant surgery', 'surgery']"
-heart failure,['heart transplant'],google trends,['heart failure']
-kidney transplant,"['heart transplant', 'liver transplant', 'lung transplant', 'pancreas transplant', 'kidney transplant']",google trends,"['kidney transplant', 'after kidney transplant', 'what is a kidney transplant', 'kidney transplant surgery', 'icd 10 kidney transplant', 'kidney transplant donor', 'kidney transplant center', 'kidney transplant rejection', 'post kidney transplant', 'kidney transplant list', 'kidney transplant cost', 'kidney transplant pig', 'first kidney transplant', 'kidney transplant recovery', 'can you get a kidney transplant', 'how much is a kidney transplant', 'pig kidney transplant update', 'pig kidney transplant dies', 'kidney transplant covid vaccine', 'pig kidney transplant to human', 'pig kidney transplant died', 'kidney transplant near me', 'how much for a kidney transplant', 'kidney transplant centers near me', 'kidney transplant waiting list by state', 'how long can you live with a kidney transplant', 'kidney', 'kidney transplantation']"
-heart transplant cost,['heart transplant'],google trends,"['heart transplant cost', 'heart transplant list']"
-lung transplant,"['heart transplant', 'lung transplant']",google trends,"['lung transplant', 'double lung transplant', 'heart lung transplant', 'lung transplant survival', 'lung transplant survival rate', 'lung transplant surgery', 'covid lung transplant', 'lung transplant cost', 'lung transplant life expectancy', 'lung transplant cystic fibrosis', 'lung transplant rejection', 'lung transplant icd 10', 'lung transplant list', 'heart and lung transplant', 'copd lung transplant', 'lung transplant center', 'can you get a lung transplant', 'first lung transplant', 'ben askren lung transplant', 'pulmonary fibrosis lung transplant', 'ben askren double lung transplant', 'why did ben askren need a lung transplant', 'why does ben askren need a lung transplant', 'why did ben askren need a double lung transplant', 'double lung transplant survival rates by age', 'who paid for ben askren lung transplant', 'how much is a double lung transplant', 'lung transplant survival rates 2020', 'pig lung transplant', 'which statement is true about both lung transplant and bullectomy?', 'lung transplant survival rates by age', 'how much does a double lung transplant cost', 'lung transplant for covid', 'clad lung transplant', 'how much is a lung transplant', 'double lung transplant cost', 'is lung transplant possible', 'double lung transplant survival rate', 'life expectancy after double lung transplant', 'can you have a lung transplant', 'lung', 'lung transplantation']"
-liver transplant,"['heart transplant', 'kidney transplant', 'lung transplant', 'liver transplant', 'pancreas transplant']",google trends,"['liver transplant', 'liver transplant donor', 'trachtenberg liver transplant', 'michelle trachtenberg liver transplant', 'liver transplant surgery', 'live liver transplant', 'liver transplant list', 'liver transplant icd 10', 'liver transplant criteria', 'liver transplant cost', 'living liver transplant', 'liver transplant survival', 'can you get a liver transplant', 'living donor liver transplant', 'liver transplant life expectancy', 'liver transplant survival rate', 'liver transplant rejection', 'liver transplant recovery', 'michelle trachtenberg liver transplant why', 'did michelle trachtenberg have a liver transplant', 'why did michelle trachtenberg have a liver transplant', 'why did michelle trachtenberg need a liver transplant', 'bernie kosar liver transplant', 'why did michelle trachtenberg get a liver transplant', 'why did michelle have a liver transplant', 'liver transplant survival rate by age', 'why would someone need a liver transplant', 'pig liver transplant', 'can an alcoholic get a liver transplant', 'why would you need a liver transplant', 'can you do a liver transplant', 'how hard is it to get a liver transplant', 'david crosby liver transplant', 'can you have a liver transplant', 'how long does it take to get a liver transplant', 'how much is a liver transplant', 'liver', 'liver transplantation']"
-heart disease,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant', 'pancreas transplant']",google trends,"['heart disease', 'disease']"
-heart transplant rejection,['heart transplant'],google trends,['heart transplant rejection']
-heart transplant survival rate,"['heart transplant', 'liver transplant', 'lung transplant']",google trends,"['heart transplant survival rate', 'survival rate']"
-heart transplant life expectancy,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant']",google trends,"['heart transplant life expectancy', 'life', 'life expectancy']"
-heart transplant icd 10,['heart transplant'],google trends,['heart transplant icd 10']
-artificial heart,['heart transplant'],google trends,"['artificial heart', 'artificial heart transplant']"
-pediatric heart transplant,['heart transplant'],google trends,"['pediatric heart transplant', 'robotic heart transplant', 'dcd heart transplant']"
-alaska man heart transplant,['heart transplant'],google trends,['alaska man heart transplant']
-covid vaccine heart transplant patients,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant']",google trends,"['covid vaccine heart transplant patients', 'heart transplantation', 'patient']"
-david bennett heart transplant,['heart transplant'],google trends,['david bennett heart transplant']
-jackson browne heart transplant,['heart transplant'],google trends,['jackson browne heart transplant']
-patrick holland heart transplant,['heart transplant'],google trends,['patrick holland heart transplant']
-alaska man misses heart transplant,['heart transplant'],google trends,['alaska man misses heart transplant']
-amy silverstein heart transplant,['heart transplant'],google trends,['amy silverstein heart transplant']
-heart transplant from pig,['heart transplant'],google trends,['heart transplant from pig']
-partial heart transplant,['heart transplant'],google trends,['partial heart transplant']
-do you die during a heart transplant,['heart transplant'],google trends,['do you die during a heart transplant']
-can you transplant a liver,['liver transplant'],google trends,['can you transplant a liver']
-liver disease,['liver transplant'],google trends,"['liver disease', 'model for end-stage liver disease']"
-cirrhosis,['liver transplant'],google trends,"['cirrhosis', 'liver cirrhosis']"
-liver cancer,"['liver transplant', 'lung transplant', 'pancreas transplant']",google trends,"['liver cancer', 'cancer']"
-liver failure,['liver transplant'],google trends,['liver failure']
-michelle trachtenberg cause of death,['liver transplant'],google trends,"['michelle trachtenberg cause of death', 'cause of death']"
-michelle trachtenberg illness,['liver transplant'],google trends,['michelle trachtenberg illness']
-kidney disease,['kidney transplant'],google trends,"['kidney disease', 'chronic kidney disease']"
-dialysis,['kidney transplant'],google trends,"['dialysis', 'kidney dialysis']"
-kidney failure,"['kidney transplant', 'lung transplant']",google trends,['kidney failure']
-kidney pancreas transplant,"['kidney transplant', 'pancreas transplant']",google trends,"['kidney pancreas transplant', 'pancreas']"
-how much is a kidney,['kidney transplant'],google trends,['how much is a kidney']
-tacrolimus,['kidney transplant'],google trends,['tacrolimus']
-cystic fibrosis,['lung transplant'],google trends,"['cystic fibrosis', 'fibrosis']"
-pancreas transplant diabetes,['pancreas transplant'],google trends,"['pancreas transplant diabetes', 'diabetes']"
-kidney and pancreas transplant,['pancreas transplant'],google trends,['kidney and pancreas transplant']
-pancreas transplant cancer,['pancreas transplant'],google trends,['pancreas transplant cancer']
-can you get a pancreas transplant,['pancreas transplant'],google trends,"['can you get a pancreas transplant', 'can you have a pancreas transplant']"
-pancreas transplant for diabetes,['pancreas transplant'],google trends,['pancreas transplant for diabetes']
-pancreas transplant icd 10,['pancreas transplant'],google trends,['pancreas transplant icd 10']
-pancreas transplant cost,['pancreas transplant'],google trends,['pancreas transplant cost']
-pancreas transplant for cancer,['pancreas transplant'],google trends,['pancreas transplant for cancer']
-pancreas transplant for type 1 diabetes,['pancreas transplant'],google trends,"['pancreas transplant for type 1 diabetes', 'type 1 diabetes']"
-pancreas transplant surgery,['pancreas transplant'],google trends,['pancreas transplant surgery']
-pig pancreas transplant,['pancreas transplant'],google trends,['pig pancreas transplant']
-organ transplantation,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant', 'pancreas transplant']",google trends,['organ transplantation']
-hospital,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant']",google trends,['hospital']
-icd-10,"['heart transplant', 'liver transplant', 'kidney transplant']",google trends,"['icd-10', 'icd-10-cm']"
-organ donation,"['heart transplant', 'liver transplant', 'kidney transplant']",google trends,['organ donation']
-asian bleeding-heart,['heart transplant'],google trends,['asian bleeding-heart']
-waiting list,"['heart transplant', 'liver transplant']",google trends,['waiting list']
-chronic condition,"['heart transplant', 'liver transplant', 'kidney transplant']",google trends,['chronic condition']
-cardiologist,['heart transplant'],google trends,['cardiologist']
-dicentra,['heart transplant'],google trends,['dicentra']
-alcoholism,['liver transplant'],google trends,['alcoholism']
-diagnosis,"['liver transplant', 'kidney transplant', 'lung transplant']",google trends,['diagnosis']
-blood,['kidney transplant'],google trends,['blood']
-pharmaceutical drug,['kidney transplant'],google trends,['pharmaceutical drug']
-nurse,['kidney transplant'],google trends,['nurse']
-glomerular filtration rate,['kidney transplant'],google trends,['glomerular filtration rate']
-cure,"['lung transplant', 'pancreas transplant']",google trends,['cure']
-human body,['lung transplant'],google trends,['human body']
-bronchoscopy,['lung transplant'],google trends,['bronchoscopy']
-interstitial lung disease,['lung transplant'],google trends,['interstitial lung disease']
-health care,['lung transplant'],google trends,['health care']
-sarcoidosis,['lung transplant'],google trends,['sarcoidosis']
-bone marrow,['lung transplant'],google trends,['bone marrow']
-risk | brilliant math & science wiki,['lung transplant'],google trends,['risk | brilliant math & science wiki']
-cardiopulmonary bypass,['lung transplant'],google trends,['cardiopulmonary bypass']
-pancreas transplantation,['pancreas transplant'],google trends,['pancreas transplantation']
+search key,type,source,cluster_id,variants
+why did ben askren need a lung transplant,['lung transplant'],google trends,0,"['ben askren double lung transplant', 'ben askren lung transplant', 'who paid for ben askren lung transplant', 'why did ben askren need a double lung transplant', 'why does ben askren need a lung transplant']"
+liver transplant,"['heart transplant', 'kidney transplant', 'lung transplant']",google trends,1,"['live liver transplant', 'liver transplant patient', 'liver transplant surgery', 'liver transplantation', 'living liver transplant', 'post liver transplant']"
+after kidney transplant,['kidney transplant'],google trends,2,['post kidney transplant']
+liver transplant list,['liver transplant'],google trends,3,['liver transplant waiting list']
+liver transplant diagnosis,['liver transplant'],google trends,4,['liver transplant disease']
+lung transplant survival rate,['lung transplant'],google trends,5,"['double lung transplant survival rates by age', 'lung transplant survival', 'lung transplant survival rates 2020', 'lung transplant survival rates by age']"
+heart transplant,['lung transplant'],google trends,6,"['heart transplant surgery', 'heart transplantation', 'what is a heart transplant']"
+heart transplant life,['heart transplant'],google trends,7,['heart transplant life expectancy']
+lung transplant,['heart transplant'],google trends,8,"['lung transplant disease', 'lung transplant health care', 'lung transplant patient', 'lung transplant surgery', 'lung transplantation']"
+pancreas transplantation,['pancreas transplant'],google trends,9,"['can you get a pancreas transplant', 'can you have a pancreas transplant', 'pancreas transplant', 'pancreas transplant cure', 'pancreas transplant disease', 'pancreas transplant surgery']"
+lung transplant fibrosis,['lung transplant'],google trends,10,"['lung transplant cystic fibrosis', 'pulmonary fibrosis lung transplant']"
+lung transplant kidney,['lung transplant'],google trends,11,['lung transplant kidney failure']
+heart transplant from pig,['heart transplant'],google trends,12,"['first pig heart transplant to-human', 'heart transplant pig', 'heart transplant pig heart', 'pig heart transplant to human', 'pig heart transplant update', 'pigs heart transplant']"
+pancreas transplant for diabetes,['pancreas transplant'],google trends,13,"['pancreas transplant diabetes', 'pancreas transplant for type 1 diabetes', 'pancreas transplant type 1 diabetes']"
+kidney transplant centers near me,['kidney transplant'],google trends,14,['kidney transplant near me']
+lung transplant list,['lung transplant'],google trends,15,['lung transplant waiting list']
+heart transplant waiting list,['heart transplant'],google trends,16,['heart transplant list']
+why did michelle trachtenberg have a liver transplant,['liver transplant'],google trends,17,"['liver transplant michelle trachtenberg illness', 'michelle trachtenberg liver transplant', 'michelle trachtenberg liver transplant why', 'why did michelle trachtenberg get a liver transplant', 'why did michelle trachtenberg need a liver transplant']"
+kidney transplant liver,['kidney transplant'],google trends,18,['liver transplant kidney']
+which statement is true about both lung transplant and bullectomy?,['lung transplant'],google trends,19,[]
+how much is a liver transplant,['liver transplant'],google trends,20,['liver transplant cost']
+kidney transplant organ donation,['kidney transplant'],google trends,21,['kidney transplant donor']
+pig kidney transplant died,['kidney transplant'],google trends,22,"['pig heart transplant dies', 'pig kidney transplant dies']"
+liver transplant icd 10,['liver transplant'],google trends,23,"['liver transplant icd-10', 'liver transplant icd-10-cm']"
+kidney dialysis,['kidney transplant'],google trends,24,['kidney transplant dialysis']
+liver transplant alcoholism,['liver transplant'],google trends,25,['can an alcoholic get a liver transplant']
+heart transplant cost,['heart transplant'],google trends,26,['how much is a heart transplant']
+selena gomez kidney transplant,['kidney transplant'],google trends,27,"['selena gomez health kidney transplant', 'selena gomez kidney transplant donor', 'selena kidney transplant']"
+pig lung transplant,['lung transplant'],google trends,28,[]
+pig kidney transplant,['kidney transplant'],google trends,29,"['pig kidney transplant to human', 'pig kidney transplant update']"
+nick cannon kidney transplant,['kidney transplant'],google trends,30,[]
+heart transplant patient,['heart transplant'],google trends,31,['heart transplant cardiologist']
+liver transplant survival rate,['liver transplant'],google trends,32,"['liver transplant survival', 'liver transplant survival rate by age']"
+lung transplant life,['lung transplant'],google trends,33,['lung transplant life expectancy']
+heart transplant liver,['heart transplant'],google trends,34,['liver transplant heart']
+how much does a double lung transplant cost,['lung transplant'],google trends,35,"['double lung transplant cost', 'how much is a double lung transplant']"
+liver transplant life,['liver transplant'],google trends,36,['liver transplant life expectancy']
+lung transplant covid,['lung transplant'],google trends,37,['lung transplant for covid']
+liver transplant cause of death,['liver transplant'],google trends,38,[]
+pancreas transplant cost,['pancreas transplant'],google trends,39,[]
+lung transplant cancer,['lung transplant'],google trends,40,[]
+lung transplant liver,['lung transplant'],google trends,41,[]
+liver transplant near me,['liver transplant'],google trends,42,[]
+lung transplant hospital,['lung transplant'],google trends,43,['lung transplant center']
+heart transplant icd 10,['heart transplant'],google trends,44,"['heart transplant icd-10', 'heart transplant icd-10-cm']"
+first heart transplant,['heart transplant'],google trends,45,['where did the first heart transplant take place']
+dick cheney heart transplant,['heart transplant'],google trends,46,['cheney heart transplant']
+pig pancreas transplant,['pancreas transplant'],google trends,47,[]
+why would you need a liver transplant,['liver transplant'],google trends,48,['why would someone need a liver transplant']
+kidney transplant,"['heart transplant', 'liver transplant', 'lung transplant', 'pancreas transplant']",google trends,49,"['kidney transplant surgery', 'kidney transplantation', 'what is a kidney transplant']"
+how much is a kidney transplant,['kidney transplant'],google trends,50,"['how much for a kidney transplant', 'kidney transplant cost']"
+patrick holland heart transplant,['heart transplant'],google trends,51,[]
+kidney transplant heart,['kidney transplant'],google trends,52,['heart transplant kidney']
+liver transplant rejection,['liver transplant'],google trends,53,[]
+pediatric heart transplant,['heart transplant'],google trends,54,[]
+kidney transplant covid vaccine,['kidney transplant'],google trends,55,[]
+lung transplant cure,['lung transplant'],google trends,56,[]
+how long is a heart transplant surgery,['heart transplant'],google trends,57,[]
+liver transplant gene hackman,['liver transplant'],google trends,58,[]
+lung transplant risk | brilliant math & science wiki,['lung transplant'],google trends,59,[]
+liver transplant criteria,['liver transplant'],google trends,60,[]
+heart transplant rejection,['heart transplant'],google trends,61,[]
+lung transplant icd 10,['lung transplant'],google trends,62,[]
+pancreas transplant cancer,['pancreas transplant'],google trends,63,['pancreas transplant for cancer']
+alaska man heart transplant,['heart transplant'],google trends,64,['alaska man misses heart transplant']
+pig liver transplant,['liver transplant'],google trends,65,[]
+liver transplant donor,['liver transplant'],google trends,66,"['liver transplant living donor', 'liver transplant organ donation']"
+pancreas transplant liver,['pancreas transplant'],google trends,67,[]
+how much is a lung transplant,['lung transplant'],google trends,68,['lung transplant cost']
+liver transplant cancer,['liver transplant'],google trends,69,[]
+kidney transplant recovery,['kidney transplant'],google trends,70,[]
+kidney transplant life,['kidney transplant'],google trends,71,[]
+lung transplant human body,['lung transplant'],google trends,72,[]
+can you have a liver transplant,['liver transplant'],google trends,73,"['can you get a liver transplant', 'can you transplant a liver']"
+kidney pancreas transplant,"['kidney transplant', 'pancreas transplant']",google trends,74,"['kidney and pancreas transplant', 'pancreas transplant kidney']"
+kidney transplant diagnosis,['kidney transplant'],google trends,75,[]
+nate robinson kidney transplant,['kidney transplant'],google trends,76,[]
+kidney transplant patient,['kidney transplant'],google trends,77,[]
+kidney transplant chronic condition,['kidney transplant'],google trends,78,[]
+liver disease,['liver transplant'],google trends,79,[]
+how much is a kidney,['kidney transplant'],google trends,80,[]
+heart disease,['heart transplant'],google trends,81,[]
+lung,['lung transplant'],google trends,82,[]
+david bennett heart transplant,['heart transplant'],google trends,83,[]
+lung transplant bronchoscopy,['lung transplant'],google trends,84,[]
+joslyn james kidney transplant,['kidney transplant'],google trends,85,[]
+artificial heart,['heart transplant'],google trends,86,[]
+do you die during a heart transplant,['heart transplant'],google trends,87,[]
+dr victor chang first heart transplant,['heart transplant'],google trends,88,[]
+liver,['liver transplant'],google trends,89,[]
+copd lung transplant,['lung transplant'],google trends,90,[]
+liver transplant hospital,['liver transplant'],google trends,91,[]
+pig heart,['heart transplant'],google trends,92,[]
+double lung transplant,['lung transplant'],google trends,93,[]
+robotic heart transplant,['heart transplant'],google trends,94,[]
+asian bleeding-heart,['heart transplant'],google trends,95,[]
+model for end-stage liver disease,['liver transplant'],google trends,96,[]
+interstitial lung disease,['lung transplant'],google trends,97,[]
+organ transplantation,"['heart transplant', 'liver transplant', 'kidney transplant', 'lung transplant', 'pancreas transplant']",google trends,98,[]
+lung transplant sarcoidosis,['lung transplant'],google trends,99,[]
+kidney transplant rejection,['kidney transplant'],google trends,100,[]
+how long can you live with a kidney transplant,['kidney transplant'],google trends,101,[]
+partial heart transplant,['heart transplant'],google trends,102,[]
+heart transplant dicentra,['heart transplant'],google trends,103,[]
+lung transplant rejection,['lung transplant'],google trends,104,[]
+kidney transplant tacrolimus,['kidney transplant'],google trends,105,[]
+lung transplant diagnosis,['lung transplant'],google trends,106,[]
+heart transplant patient unvaccinated,['heart transplant'],google trends,107,[]
+how long does it take to get a liver transplant,['liver transplant'],google trends,108,[]
+heart failure,['heart transplant'],google trends,109,[]
+kidney transplant blood,['kidney transplant'],google trends,110,[]
+can you get a kidney transplant,['kidney transplant'],google trends,111,[]
+heart transplant movie,['heart transplant'],google trends,112,[]
+heart,['heart transplant'],google trends,113,[]
+kidney transplant list,['kidney transplant'],google trends,114,[]
+heart transplant survival rate,['heart transplant'],google trends,115,[]
+heart transplant hospital,['heart transplant'],google trends,116,[]
+kidney transplant hospital,['kidney transplant'],google trends,117,[]
+first kidney transplant,['kidney transplant'],google trends,118,[]
+covid vaccine heart transplant patients,['heart transplant'],google trends,119,[]
+liver transplant chronic condition,['liver transplant'],google trends,120,[]
+dcd heart transplant,['heart transplant'],google trends,121,[]
+liver cirrhosis,['liver transplant'],google trends,122,[]
+bert kreischer kidney transplant,['kidney transplant'],google trends,123,[]
+heart transplant chronic condition,['heart transplant'],google trends,124,[]
+heart transplant organ donation,['heart transplant'],google trends,125,[]
+lung transplant bone marrow,['lung transplant'],google trends,126,[]
+clad lung transplant,['lung transplant'],google trends,127,[]
+can you get a lung transplant,['lung transplant'],google trends,128,['can you have a lung transplant']
+jackson browne heart transplant,['heart transplant'],google trends,129,[]
+why did michelle have a liver transplant,['liver transplant'],google trends,130,[]
+kidney failure,['kidney transplant'],google trends,131,[]
+liver transplant cirrhosis,['liver transplant'],google trends,132,[]
+pancreas,['pancreas transplant'],google trends,133,[]
+kidney transplant icd 10,['kidney transplant'],google trends,134,"['kidney transplant icd-10', 'kidney transplant icd-10-cm']"
+kidney transplant glomerular filtration rate,['kidney transplant'],google trends,135,[]
+lung transplant cardiopulmonary bypass,['lung transplant'],google trends,136,[]
+liver failure,['liver transplant'],google trends,137,[]
+heart lung transplant,['lung transplant'],google trends,138,"['heart and lung transplant', 'heart transplant lung', 'lung transplant heart']"
+kidney transplant waiting list by state,['kidney transplant'],google trends,139,[]
+artificial heart transplant,['heart transplant'],google trends,140,[]
+kidney transplant disease,['kidney transplant'],google trends,141,[]
+how hard is it to get a liver transplant,['liver transplant'],google trends,142,[]
+kidney disease,['kidney transplant'],google trends,143,[]
+chronic kidney disease,['kidney transplant'],google trends,144,[]
+kidney,['kidney transplant'],google trends,145,[]
+first lung transplant,['lung transplant'],google trends,146,[]
+kidney transplant nurse,['kidney transplant'],google trends,147,[]
+trachtenberg liver transplant,['liver transplant'],google trends,148,[]
+kidney transplant pharmaceutical drug,['kidney transplant'],google trends,149,[]
+liver cancer,['liver transplant'],google trends,150,[]
+amy silverstein heart transplant,['heart transplant'],google trends,151,[]
+heart transplant disease,['heart transplant'],google trends,152,[]
+david crosby liver transplant,['liver transplant'],google trends,153,[]
+liver transplant michelle trachtenberg cause of death,['liver transplant'],google trends,154,[]
+bernie kosar liver transplant,['liver transplant'],google trends,155,[]
