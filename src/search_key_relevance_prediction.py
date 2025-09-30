@@ -114,8 +114,8 @@ def save_predicted_results(original_name, predicted_relevance, df, output_dir='.
     # Add predicted relevance to dataframe
     df['predicted_relevance'] = predicted_relevance
     
-    # Create output filename
-    base_name = original_name.replace('.csv', '')
+    # Create output filename - extract just the filename from the full path
+    base_name = os.path.basename(original_name).replace('.csv', '')
     output_filename = f'predicted_{base_name}.csv'
     output_path = os.path.join(output_dir, output_filename)
     
@@ -124,7 +124,10 @@ def save_predicted_results(original_name, predicted_relevance, df, output_dir='.
     print(f"Predicted results saved to: {output_path}")
     return output_path
 
-def process_search_key_files(model_path, embedding_model_path, data_dir='../data/search key'):
+def process_search_key_files(model_path, 
+                             embedding_model_path, 
+                             data_dir = '../data/search key/raw',
+                             csv_path='../data/search key/raw/search_key_combined_cleaned.csv'):
     """
     Process all CSV files in the data directory and predict relevance
     
@@ -134,54 +137,37 @@ def process_search_key_files(model_path, embedding_model_path, data_dir='../data
         data_dir: Directory containing CSV files
     """
     # Load models
-    print("Loading models...")
+    #print("Loading models...")
     model = load_model(model_path)
     embedding_model = load_embedding_model(embedding_model_path)
     
-    # Process each CSV file
-    csv_files = [f for f in os.listdir(data_dir) if f.endswith('.csv') and not f.startswith('predicted_')]
-    
-    if not csv_files:
-        print(f"No CSV files found in {data_dir}")
-        return
-    
-    print(f"Found {len(csv_files)} CSV files to process")
-    
-    for csv_file in csv_files:
-        print(f"\nProcessing: {csv_file}")
+    print(f"\nProcessing: {csv_path}")
         
-        try:
-            # Load CSV file
-            csv_path = os.path.join(data_dir, csv_file)
-            df = load_csv(csv_path)
-            
-            # Get search keys
-            search_keys = df['search key'].tolist()
-            print(f"Processing {len(search_keys)} search keys...")
-            
-            # Get embeddings
-            embeddings = get_embeddings(embedding_model, search_keys)
-            if embeddings is None:
-                print(f"Failed to get embeddings for {csv_file}")
-                continue
-            
-            # Predict relevance
-            predicted_relevance = predict_relevance(model, embeddings)
-            if predicted_relevance is None:
-                print(f"Failed to predict relevance for {csv_file}")
-                continue
-            
-            # Save results
-            save_predicted_results(csv_file, predicted_relevance, df, data_dir)
-            
-            # Print summary
-            relevant_count = np.sum(predicted_relevance)
-            total_count = len(predicted_relevance)
-            print(f"Summary: {relevant_count}/{total_count} search keys predicted as relevant")
-            
-        except Exception as e:
-            print(f"Error processing {csv_file}: {e}")
-            continue
+    try:
+        # Load CSV file
+        df = load_csv(csv_path)
+        
+        # Get search keys
+        search_keys = df['search key'].tolist()
+        print(f"Processing {len(search_keys)} search keys...")
+        
+        # Get embeddings
+        embeddings = get_embeddings(embedding_model, search_keys)
+        
+        # Predict relevance
+        predicted_relevance = predict_relevance(model, embeddings)
+       
+        # Save results
+        save_predicted_results(csv_path, predicted_relevance, df, data_dir)
+        
+        # Print summary
+        relevant_count = np.sum(predicted_relevance)
+        total_count = len(predicted_relevance)
+        print(f"Summary: {relevant_count}/{total_count} search keys predicted as relevant")
+        
+    except Exception as e:
+        print(f"Error processing {csv_path}: {e}")
+
 
 if __name__ == '__main__':
     # Define model paths
