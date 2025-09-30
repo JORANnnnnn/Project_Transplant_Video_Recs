@@ -1,3 +1,4 @@
+from transformers.pipelines import pipeline
 import google_trends_search_key_generation
 import google_autocom_search_key
 import search_key_clean_deduplicate
@@ -91,12 +92,23 @@ if __name__ == "__main__":
     # merge_all_csv_files()
     
     
-    
     # 2: clean and deduplicate the search keys
     df = pd.read_csv('../data/search key/raw/search_key_combined_unclean.csv')
-    
-    # Step 1: Filter roughly medical terms (with blacklist)
-    df_filtered = search_key_clean_deduplicate.filter_medical_terms(df)
+     # load the models
+    print("Loading models...")
+    classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
+    sbert_model = sentence_transformers.SentenceTransformer('all-MiniLM-L6-v2')
+    spacy_nlp = spacy.load("en_core_web_sm", disable=['parser', 'ner'])
+    print("All models loaded.")
+
+    # Step 1: Filter roughly medical terms (with parallel processing)
+    print("Using parallel processing for medical term filtering...")
+    df_filtered = search_key_clean_deduplicate.filter_medical_terms_parallel(
+        df, 
+        classifier=classifier, 
+        batch_size=16,  # 每批处理16个词
+        max_workers=4   # 使用4个并行线程
+    )
     print("After medical filtering:", len(df_filtered))
     
     # Step 2: insert back the type keywords
@@ -107,10 +119,6 @@ if __name__ == "__main__":
     print("After exact deduplication:", len(df_cleaned))
     
     # Step 4: Semantic Deduplication
-    print("Loading NLP models...")
-    sbert_model = sentence_transformers.SentenceTransformer('all-MiniLM-L6-v2')
-    spacy_nlp = spacy.load("en_core_web_sm", disable=['parser', 'ner'])
-    print("Models loaded.")
     df_final = search_key_clean_deduplicate.deduplicate_keywords(
             df=df_cleaned,
             keyword_column='search key',
@@ -120,4 +128,4 @@ if __name__ == "__main__":
         )
     print("After deduplication:", len(df_final))
     df_final.to_csv('../data/search key/raw/search_key_combined_cleaned.csv', index=False)
-    print("✅ Saved to search_key_combined_cleaned.csv")
+    print("SUCCESS: Saved to search_key_combined_cleaned.csv")
