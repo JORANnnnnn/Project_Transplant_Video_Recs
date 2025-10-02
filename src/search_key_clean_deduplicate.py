@@ -6,12 +6,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 import spacy
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import threading
-from functools import partial
 
 def _classify_batch(terms_batch, classifier, candidate_labels):
     """
-    对一批术语进行分类的辅助函数
+    Helper function to classify a batch of terms
     """
     try:
         results = classifier(terms_batch, candidate_labels, multi_label=False)
@@ -22,7 +20,7 @@ def _classify_batch(terms_batch, classifier, candidate_labels):
 
 def filter_medical_terms_parallel(df, classifier=None, candidate_labels=None, batch_size=16, max_workers=4):
     """
-    使用并行处理过滤医疗术语的优化版本
+    Optimized parallel processing to filter medical-related terms
     """
     if df.empty:
         return df
@@ -41,21 +39,21 @@ def filter_medical_terms_parallel(df, classifier=None, candidate_labels=None, ba
     terms_to_classify = df['search key'].tolist()
     print(f"Parallel categorizing {len(terms_to_classify)} search keys with {max_workers} workers...")
     
-    # 将术语分批
+    # Split terms into batches
     batches = [terms_to_classify[i:i + batch_size] for i in range(0, len(terms_to_classify), batch_size)]
     print(f"Split into {len(batches)} batches of size {batch_size}")
     
     all_results = []
     
-    # 使用线程池并行处理
+    # Use a thread pool for parallel processing
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # 提交所有批次任务
+        # Submit all batch tasks
         future_to_batch = {
             executor.submit(_classify_batch, batch, classifier, candidate_labels): i 
             for i, batch in enumerate(batches)
         }
         
-        # 收集结果
+        # Collect results
         completed_batches = 0
         for future in as_completed(future_to_batch):
             batch_idx = future_to_batch[future]
@@ -74,7 +72,7 @@ def filter_medical_terms_parallel(df, classifier=None, candidate_labels=None, ba
     
     if len(all_results) != len(terms_to_classify):
         print(f"Warning: Expected {len(terms_to_classify)} results, got {len(all_results)}")
-        # 如果结果数量不匹配，回退到原始方法
+        # If the number of results does not match, fall back to the original method
         print("Falling back to sequential processing...")
         return filter_medical_terms(df, classifier, candidate_labels)
     
@@ -168,11 +166,11 @@ def exact_deduplication(df):
     if df.empty:
         return df
 
-    # 使用groupby对'search key'进行分组，然后对其他列进行聚合
+    # Group by 'search key' and then aggregate other columns
     df_cleaned = df.groupby('search key', as_index=False).agg({
-        # 对于'type'列，将每个组内的值去重后合并成一个列表
+        # For the 'type' column, deduplicate values within each group and merge into a list
         'type': lambda x: list(x.unique()),
-        # 对于'source'列，取每个组的第一个值（假设同一组的source应该相同）
+        # For the 'source' column, take the first value in each group (assuming the same source within a group)
         'source': 'first'
     })
     
@@ -186,48 +184,48 @@ def deduplicate_keywords(df: pd.DataFrame,
                                           nlp, 
                                           distance_threshold: float = 0.2) -> pd.DataFrame:
     """
-    对DataFrame中的关键词列进行语义去重,并保留簇内的其他变体。
+    Perform semantic deduplication on the keyword column in a DataFrame and retain other variants within each cluster.
 
-    此函数返回一个去重后的DataFrame,其中包含每个簇的代表行、
-    一个包含该簇所有其他成员的'variants'列，以及'cluster_id'。
+    This function returns a deduplicated DataFrame that includes the representative row for each cluster,
+    a 'variants' column containing other members of that cluster, and a 'cluster_id'.
 
     Parameters
     ----------
     df : pd.DataFrame
-        输入的DataFrame。
+        Input DataFrame.
     keyword_column : str
-        包含关键词的列的名称。
+        Name of the column that contains keywords.
     model : SentenceTransformer
-        预加载的sentence-transformer模型。
+        Preloaded sentence-transformer model.
     nlp : spacy.Language
-        预加载的spacy模型。
+        Preloaded spaCy model.
     distance_threshold : float, optional
-        聚类的距离阈值，默认为0.2。
+        Distance threshold for clustering. Default is 0.2.
 
     Returns
     -------
     pd.DataFrame
-        一个去重后的DataFrame，包含原始数据的子集和新的'cluster_id'、'variants'列。
+        A deduplicated DataFrame that contains a subset of the original data with new 'cluster_id' and 'variants' columns.
     """
     if df.empty or keyword_column not in df.columns:
         return pd.DataFrame()
 
     df_processed = df.copy()
     
-    # 1. 标准化
+    # 1. Normalization
     def normalize_text(text):
         doc = nlp(str(text).lower())
         return " ".join([token.lemma_ for token in doc if not token.is_punct])
 
     df_processed['normalized_keyword'] = df_processed[keyword_column].apply(normalize_text)
 
-    # 2. 向量化 (Embedding)
+    # 2. Vectorization (Embedding)
     unique_keywords = df_processed['normalized_keyword'].unique().tolist()
     embeddings = model.encode(unique_keywords, show_progress_bar=False)
     embedding_map = {kw: emb for kw, emb in zip(unique_keywords, embeddings)}
     df_processed['embedding'] = df_processed['normalized_keyword'].map(embedding_map)
 
-    # 3. 聚类
+    # 3. Clustering
     if len(unique_keywords) <= 1:
         df_processed['cluster_id'] = 0
     else:
@@ -242,29 +240,29 @@ def deduplicate_keywords(df: pd.DataFrame,
         cluster_map = {kw: cluster_id for kw, cluster_id in zip(unique_keywords, clustering.labels_)}
         df_processed['cluster_id'] = df_processed['normalized_keyword'].map(cluster_map)
 
-    # --- 4. 选出代表行并收集变体 (核心改动) ---
+    # --- 4. Select representative row and collect variants (core change) ---
     final_rows = []
     for cluster_id in sorted(df_processed['cluster_id'].unique()):
         cluster_df = df_processed[df_processed['cluster_id'] == cluster_id]
         
-        # 找出代表行的索引
+        # Find the index of the representative row
         cluster_embeddings = np.array(cluster_df['embedding'].tolist())
         centroid = np.mean(cluster_embeddings, axis=0)
         similarities = cosine_similarity(cluster_embeddings, [centroid])
         representative_index_in_cluster = np.argmax(similarities)
         original_index = cluster_df.index[representative_index_in_cluster]
         
-        # 获取代表行的完整数据（从原始df中获取，保证数据无损）
+        # Get the full data of the representative row (from the original df to avoid loss)
         representative_row = df.loc[original_index].to_dict()
         
-        # 获取该簇中所有的原始关键词
+        # Get all original keywords in the cluster
         all_keywords_in_cluster = cluster_df[keyword_column].tolist()
         representative_keyword = representative_row[keyword_column]
         
-        # 创建变体列表 (排除代表词本身)
+        # Create the variants list (excluding the representative keyword itself)
         variants = [kw for kw in all_keywords_in_cluster if kw != representative_keyword]
         
-        # 将新信息添加到行数据中
+        # Add new information to the row data
         representative_row['cluster_id'] = cluster_id
         representative_row['variants'] = variants
         
