@@ -36,6 +36,7 @@ credibility/
 ### Output
 - `verified_organizations.db` - SQLite database of verified organizations
 - `output/All_YouTube_Channels_Collected.xlsx` - All channels from video database
+- `output/Verified_Videos_From_Credible_Orgs.csv` - Videos from verified organizations (for teammates)
 - `output/Unmatched_Videos_For_Review.csv` - Videos from non-verified channels
 - `output/Credibility_Hit_Rate_Report.xlsx` - Complete hit rate analysis
 
