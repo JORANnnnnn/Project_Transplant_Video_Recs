@@ -1,0 +1,16 @@
+# --- Python Generated Files ---
+# Ignore Python's bytecode cache, which is specific to your machine.
+__pycache__/
+*.pyc
+
+# --- Virtual Environment ---
+# Ignore the entire virtual environment folder.
+venv/
+.venv/
+env/
+
+# --- IDE and System Files ---
+# Ignore user-specific settings from code editors and operating systems.
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,22 @@
+# Core data and API libraries
+pandas
+google-api-python-client
+google-auth-oauthlib
+
+# YouTube transcript fetching
+youtube-transcript-api
+
+# Language model and evaluation frameworks
+langchain-google-genai
+langchain-core
+langchain-community
+pydantic
+google-genai
+
+# Required for reading .xlsx and .pdf files
+openpyxl
+pypdf
+
+# (Optional) For Jupyter Notebook analysis
+matplotlib
+jupyter
