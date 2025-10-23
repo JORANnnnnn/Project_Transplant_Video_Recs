@@ -27,7 +27,7 @@ DB_NAME = 'youtube_data.db'
 # If you don't need to download the full text, you can revert to using just the API_KEY.
 # If you use the authenticated path, the API_KEY is not strictly needed for the build function.
 
-API_KEY = "AIzaSyC7tjdbVPnPUxwsPA7WLTnEywh10G1Ry2M" #os.environ['YOUTUBE_API_KEY']
+API_KEY = "AIzaSyAK-PTFjHh6qz_Xwl7shmqhafjAtUp_JwM" #os.environ['YOUTUBE_API_KEY']
 SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
 API_SERVICE_NAME = 'youtube'
 API_VERSION = 'v3'

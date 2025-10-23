@@ -14,7 +14,9 @@ Project Structure
 
 -   `credible_videos.py`: Module to create an intermediate table of videos from credible channels.
 
--   `labeling.py`: Module to fetch transcripts for credible videos and score them using LLMs.
+-   `captioning.py`: Module to fetch transcripts for credible videos and save them to a new table.
+
+-   `scoring.py`: Module to score the captioned videos using LLMs and save them to a final table.
 
 -   `db_cleanup.py`: A utility script to clean legacy columns from the database tables.
 

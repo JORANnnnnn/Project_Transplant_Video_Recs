@@ -226,7 +226,7 @@ def score_videos(db_path: str, llm: ChatGoogleGenerativeAI, num_sections: int = 
 
 if __name__ == '__main__':
     DB_FILE = "youtube_data.db"
-    API_KEY = "AIzaSyAHdxUP9sF-82ABJ7KCnMB2T84hUI9OHqw"
+    API_KEY = "AIzaSyAK-PTFjHh6qz_Xwl7shmqhafjAtUp_JwM"
 
     if API_KEY == "YOUR_GEMINI_API_KEY_HERE" or not API_KEY:
         print("Please replace 'YOUR_GEMINI_API_KEY_HERE' with your actual Gemini API key.")
