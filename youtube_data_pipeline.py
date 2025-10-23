@@ -17,7 +17,8 @@ from langchain_core.rate_limiters import InMemoryRateLimiter
 
 from credibility import flag_credible_channels
 from credible_videos import create_credible_videos_table
-from labeling import enrich_and_score_videos
+from captioning import fetch_and_save_captions
+from scoring import score_videos
 
 DB_NAME = 'youtube_data.db'
 
@@ -409,13 +410,28 @@ if __name__ == '__main__':
     populate_search_terms(conn, terms)
     update_youtube_database(youtube, conn)
     conn.close()
+    print("\n--- Core YouTube Data Collection Finished ---")
 
     # --- Flag credible channels ---
     flag_credible_channels(db_path=DB_NAME, excel_path=CREDIBILITY_MASTER_FILE)
     
     # --- Create the joined credible videos table ---
     create_credible_videos_table(db_path=DB_NAME)
+
+    # --- Fetch Captions for Credible Videos ---
+    fetch_and_save_captions(db_path=DB_NAME)
     
-    # --- Run the final enrichment and scoring process ---
-    enrich_and_score_videos(db_path=DB_NAME, llm=llm)
-    print("\nProcess finished.")
+    # --- Score the Captioned Videos ---
+    primary_llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", temperature=0, google_api_key=API_KEY, rate_limiter=InMemoryRateLimiter(requests_per_second=66, check_every_n_seconds=0.1, max_bucket_size=5))
+        
+    # Example: Define configurations if you plan to use different models per section
+    model_configurations = {
+        0: {'id': 'gemini-2.0-flash-lite', 'llm_instance': primary_llm},
+        1: {'id': 'gemini-2.0-flash', 'llm_instance': ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0, google_api_key=API_KEY, rate_limiter=InMemoryRateLimiter(requests_per_second=33, check_every_n_seconds=0.1, max_bucket_size=5))},
+        2: {'id': 'gemini-2.5-flash-lite', 'llm_instance': ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0, google_api_key=API_KEY, rate_limiter=InMemoryRateLimiter(requests_per_second=66, check_every_n_seconds=0.1, max_bucket_size=5))},
+        3: {'id': 'gemini-2.5-flash', 'llm_instance': ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, google_api_key=API_KEY, rate_limiter=InMemoryRateLimiter(requests_per_second=16, check_every_n_seconds=0.1, max_bucket_size=5))},
+    }
+    
+    score_videos(db_path=DB_NAME, llm=primary_llm, num_sections=4, model_configs=model_configurations)
+    
+    print("\n--- Entire Pipeline Finished ---")
