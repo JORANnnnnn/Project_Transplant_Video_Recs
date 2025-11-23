@@ -27,12 +27,12 @@ print()
 
 pemat_mapping = {
     'PEMAT_1': 'PEMAT1_Purpose_Evident',
-    'PEMAT_3': 'PEMAT3_Everyday_Language',
-    'PEMAT_4': 'Item 4: Medical terms are used only to familiarize audience with the terms',
-    'PEMAT_5': 'Item 5: The material uses the active voice (P and A/V)',
-    'PEMAT_8': 'Item 8: The material breaks or "chunks" information into short sections (P and A/V)',
-    'PEMAT_10': 'Item 10 the main idea is in the beginning',
-    'PEMAT_11': 'Item 11: The material provides a summary (P and A/V)',
+    'PEMAT_2': 'PEMAT3_Everyday_Language',  #  PEMAT_2 (LLM) = everyday language
+    'PEMAT_3': 'Item 4: Medical terms are used only to familiarize audience with the terms',  #  PEMAT_3 (LLM) = medical terms
+    'PEMAT_4': 'Item 5: The material uses the active voice (P and A/V)',  #  PEMAT_4 (LLM) = active voice
+    'PEMAT_5': 'Item 8: The material breaks or "chunks" information into short sections (P and A/V)',  #  PEMAT_5 (LLM) = chunked
+    'PEMAT_8': 'Item 11: The material provides a summary (P and A/V)',  #  PEMAT_8 (LLM) = summary
+    'PEMAT_7': 'Item 10 the main idea is in the beginning',
 }
 
 results = []
