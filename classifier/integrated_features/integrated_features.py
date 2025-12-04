@@ -12,62 +12,10 @@ from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
 
-# Mapping of raw biomedical NER labels to high-level feature groups
-MEDICAL_CATEGORY_MAP = {
-    "DISEASE_DISORDER": "condition",
-    "CLINICAL_EVENT": "condition",
-    "OUTCOME": "condition",
-    "HISTORY": "condition",
-    "FAMILY_HISTORY": "condition",
-    
-    "SIGN_SYMPTOM": "symptom",
-    
-    "THERAPEUTIC_PROCEDURE": "therapy",
-    
-    "DIAGNOSTIC_PROCEDURE": "diagnostic",
-    "LAB_VALUE": "diagnostic",
-    
-    "MEDICATION": "medication",
-    "ADMINISTRATION": "medication",
-    "DOSAGE": "medication",
-    
-    "BIOLOGICAL_STRUCTURE": "anatomy",
-    
-    "NONBIOLOGICAL_LOCATION": "location",
-    
-    "DURATION": "measurement",
-    "FREQUENCY": "measurement",
-    "QUANTITATIVE_CONCEPT": "measurement",
-    "QUALITATIVE_CONCEPT": "measurement",
-    "DATE": "measurement",
-    "TIME": "measurement",
-    "AGE": "measurement",
-    "DISTANCE": "measurement",
-    "AREA": "measurement",
-    "VOLUME": "measurement",
-    "HEIGHT": "measurement",
-    "WEIGHT": "measurement",
-    "MASS": "measurement",
-    
-    "DETAILED_DESCRIPTION": "context",
-    "COREFERENCE": "context",
-    "SUBJECT": "context",
-    "PERSONAL_BACKGROUND": "context",
-    "OTHER_ENTITY": "context",
-    
-    "ACTIVITY": "activity",
-    "OCCUPATION": "activity",
-    
-    "NONBIOLOGICAL_LOCATION": "location",
-    
-    "OTHER_EVENT": "other",
-    "COLOR": "other",
-    "TEXTURE": "other",
-    "SHAPE": "other",
-    "SEVERITY": "other",
-}
+# ==================== MEDICAL TERM CONSTANTS AND HELPERS ====================
 
-MEDICAL_CATEGORY_ORDER = [
+# High level medical categories for aggregation
+CATEGORIES = [
     "condition",
     "symptom",
     "therapy",
@@ -81,7 +29,105 @@ MEDICAL_CATEGORY_ORDER = [
     "other",
 ]
 
-DEFAULT_CLUSTER_TOKEN_WINDOW = 80
+# Keep this alias for compatibility with any code that still references
+# MEDICAL_CATEGORY_ORDER
+MEDICAL_CATEGORY_ORDER = CATEGORIES
+
+# Simple cleaning rules for YouTube captions
+WS = re.compile(r"[ \t\u00A0]+")
+LINE_PREFIX = re.compile(r"^\s*(?:>>\s*)+", flags=re.MULTILINE)
+TIMESTAMPS = re.compile(r"\b(?:\d{1,2}:)?\d{2}:\d{2}\b")
+BRACKETED = re.compile(
+    r"\[(?:music|applause|laughter|silence|inaudible)\]",
+    flags=re.IGNORECASE,
+)
+
+
+def clean_transcript(text: str) -> str:
+    """
+    Clean YouTube captions by removing prefixes, timestamps, and bracketed tags.
+
+    This is used only inside the medical feature extractor so that NER
+    and density estimates are not confused by caption artifacts.
+    """
+    if not isinstance(text, str):
+        return ""
+    t = text.replace("\r\n", "\n").replace("\r", "\n")
+    t = LINE_PREFIX.sub("", t)
+    t = TIMESTAMPS.sub("", t)
+    t = BRACKETED.sub("", t)
+    t = WS.sub(" ", t)
+    t = re.sub(r"\s*\n\s*", " ", t)
+    return t.strip()
+
+
+def map_raw_label_to_category(raw_label: str) -> str:
+    """
+    Map a raw NER label (for example entity_group from the HF pipeline)
+    to one of the 11 high level medical categories.
+
+    This mapping uses simple substring rules so that it is robust to
+    minor changes in label names.
+    """
+    if not raw_label:
+        return "other"
+
+    key = str(raw_label).upper()
+
+    if "CONDITION" in key or "DISEASE" in key:
+        return "condition"
+    if "SYMPTOM" in key or "SIGN" in key:
+        return "symptom"
+    if "THERAPY" in key or "TREATMENT" in key or "PROCEDURE" in key:
+        return "therapy"
+    if "TEST" in key or "EXAM" in key or "DIAGNOSTIC" in key:
+        return "diagnostic"
+    if "DRUG" in key or "MEDICATION" in key or "CHEM" in key:
+        return "medication"
+    if "ANATOMY" in key or "BODY" in key or "ORGAN" in key or "STRUCTURE" in key:
+        return "anatomy"
+    if "LOCATION" in key or "SITE" in key:
+        return "location"
+    if "MEASUREMENT" in key or "VALUE" in key or "SCORE" in key:
+        return "measurement"
+    if "CONTEXT" in key:
+        return "context"
+    if "ACTIVITY" in key or "BEHAVIOR" in key:
+        return "activity"
+
+    return "other"
+
+
+def gini_from_counts(counts: List[int]) -> float:
+    """
+    Compute the Gini coefficient from a list of non negative counts.
+
+    This is used to measure how concentrated medical entities are
+    across segments of the transcript.
+    """
+    if not counts:
+        return 0.0
+
+    total = float(sum(counts))
+    if total <= 0.0:
+        return 0.0
+
+    sorted_counts = sorted(float(c) for c in counts)
+    n = len(sorted_counts)
+    cumulative = 0.0
+    weighted_sum = 0.0
+
+    for i, x in enumerate(sorted_counts, start=1):
+        cumulative += x
+        weighted_sum += i * x
+
+    gini = (2.0 * weighted_sum / (n * total)) - (n + 1.0) / n
+    # Numerical safety clamp
+    if gini < 0.0:
+        gini = 0.0
+    if gini > 1.0:
+        gini = 1.0
+    return float(gini)
 
 # NLP libraries
 import nltk
@@ -144,11 +190,11 @@ class FeatureExtractor:
                 )
                 self._capture_model_labels(model)
                 self._write_label_doc()
-                print("✅ Loaded Medical NER model")
+                print("Loaded Medical NER model")
             except Exception as e:
                 print(f"⚠️  Failed to load Medical NER model: {e}")
         
-        print("✅ Feature Extractor initialized\n")
+        print("Feature Extractor initialized\n")
     
     # ==================== READABILITY FEATURES ====================
     
@@ -255,193 +301,178 @@ class FeatureExtractor:
         }
     
     # ==================== MEDICAL TERM FEATURES ====================
-    
-    def extract_medical_features(self, text: str, 
-                                entities: Optional[List[Dict]] = None) -> Dict[str, Any]:
+
+    def extract_medical_features(self, text: str,
+                                 entities: Optional[List[Dict]] = None) -> Dict[str, Any]:
         """
-        Extract medical terminology features.
-        
-        Args:
-            text: Input text
-            entities: Pre-extracted entities (optional)
-        
-        Returns:
-            Dictionary of medical features
+        Extract medical terminology features for a single transcript.
+
+        This implementation uses cleaned captions, a robust label-to-category
+        mapping, and span-based clustering. It is designed to be compatible with
+        the existing pipeline and feature names.
         """
-        # Extract entities if not provided
-        if entities is None:
-            if self.ner_pipeline is None:
-                return self._empty_medical_features()
-            try:
-                entities = self.ner_pipeline(text)
-            except Exception as e:
-                print(f"⚠️  NER extraction failed: {e}")
-                return self._empty_medical_features()
-        
-        # Medical term density
-        words = re.findall(r"\b\w+(?:'\w+)?\b", text)
-        total_words = len(words)
-        
-        if not entities or total_words == 0:
+        # If the NER model is not available, return empty defaults
+        if self.ner_pipeline is None:
             return self._empty_medical_features()
-        
-        # Normalize entity texts
-        terms = [self._normalize_entity(e) for e in entities]
-        terms = [t for t in terms if t]
-        
+
+        # Clean caption text for NER and token based features
+        cleaned = clean_transcript(text or "")
+        if not cleaned:
+            return self._empty_medical_features()
+
+        # Tokenize words on the cleaned text.
+        # This word count is used only for medical_density.
+        tokens = word_tokenize(cleaned)
+        words = [w for w in tokens if re.match(r"\w", w)]
+        word_count = len(words)
+        if word_count == 0:
+            return self._empty_medical_features()
+
+        # Run NER once if entities are not provided
+        if entities is None:
+            try:
+                entities = self.ner_pipeline(cleaned)
+            except Exception as e:
+                print(f"Warning: NER extraction failed: {e}")
+                return self._empty_medical_features()
+
+        if not entities:
+            return self._empty_medical_features()
+
+        # Collect term texts, mapped categories, and start positions
+        terms: List[str] = []
+        categories: List[str] = []
+        starts: List[int] = []
+
+        for ent in entities:
+            term_text = self._normalize_entity(ent)
+            if not term_text:
+                continue
+
+            terms.append(term_text)
+
+            raw_label = str(ent.get("entity_group") or ent.get("entity") or "")
+            mapped_cat = map_raw_label_to_category(raw_label)
+            if mapped_cat not in CATEGORIES:
+                mapped_cat = "other"
+            categories.append(mapped_cat)
+
+            start_pos = ent.get("start")
+            if isinstance(start_pos, int):
+                starts.append(start_pos)
+
         mention_count = len(terms)
-        unique_count = len(set(t.lower() for t in terms))
-        
+        unique_count = len({t.lower() for t in terms}) if terms else 0
+
+        # Start from an empty template so all keys are always present
+        result = self._empty_medical_features()
+        result["medical_mention_count"] = mention_count
+        result["medical_unique_count"] = unique_count
+
+        if mention_count == 0:
+            # No entities, but we still return the template with counts set
+            return result
+
         # Medical term density
-        density = mention_count / total_words if total_words > 0 else 0.0
-        
-        # Term type distribution
-        type_dist = self._term_type_distribution(entities)
-        
-        # Rare term ratio (document-level)
-        rare_ratio = self._rare_term_ratio(entities)
-        
-        # Term clustering
-        clustering = self._term_clustering(text, entities)
-        
-        # Entity group counts
+        result["medical_density"] = mention_count / float(word_count)
+
+        # Category counts and ratios
+        cat_counts = Counter(categories)
+        for cat in CATEGORIES:
+            key = f"{cat}_ratio"
+            if mention_count > 0:
+                result[key] = cat_counts.get(cat, 0) / float(mention_count)
+            else:
+                result[key] = 0.0
+
+        # Rare term ratios (within caption)
+        if unique_count > 0:
+            norm_terms = [t.lower() for t in terms]
+            freq = Counter(norm_terms)
+            rare_terms = [term for term, c in freq.items() if c == 1]
+
+            rare_unique = len(rare_terms)
+            rare_mentions = sum(freq[t] for t in rare_terms)
+
+            result["rare_term_ratio_unique"] = rare_unique / float(unique_count)
+            result["rare_term_ratio_mentions"] = rare_mentions / float(mention_count)
+
+        # Term clustering using equal length segments on the cleaned text
+        if starts and len(cleaned) > 0:
+            n_segments = 5
+            seg_counts = [0] * n_segments
+            text_len = len(cleaned)
+
+            for s in starts:
+                idx = int(s / float(text_len) * n_segments)
+                if idx >= n_segments:
+                    idx = n_segments - 1
+                seg_counts[idx] += 1
+
+            gini = gini_from_counts(seg_counts)
+            max_share = max(seg_counts) / float(mention_count) if mention_count > 0 else 0.0
+            concentrated = max_share >= 0.30
+
+            result["term_clustering_gini"] = gini
+            result["term_clustering_max_share"] = max_share
+            result["term_clustering_concentrated"] = concentrated
+
+        # Raw entity group counts for downstream reporting
         entity_group_counts = self._entity_group_counts(entities)
-        
+        result["entity_group_counts"] = entity_group_counts
+
+        # Update running label statistics and documentation
         self._update_entity_counts(entities)
-        
-        return {
-            'medical_density': round(density, 4),
-            'medical_mention_count': mention_count,
-            'medical_unique_count': unique_count,
-            **type_dist,
-            'rare_term_ratio_unique': round(rare_ratio['ratio_unique'], 3),
-            'rare_term_ratio_mentions': round(rare_ratio['ratio_mentions'], 3),
-            'term_clustering_concentrated': clustering['concentrated'],
-            'term_clustering_gini': round(clustering['gini'], 3),
-            'term_clustering_max_share': round(clustering['max_share'], 3),
-            'entity_group_counts': entity_group_counts
-        }
-    
+
+        return result
+
     def _normalize_entity(self, e: Any) -> str:
-        """Extract text from entity."""
+        """Extract plain text from an entity."""
         if isinstance(e, str):
             return e.strip()
         if isinstance(e, dict):
-            return str(e.get('text') or e.get('word') or '').strip()
-        return ''
-    
-    def _term_type_distribution(self, entities: List[Dict]) -> Dict[str, float]:
-        """Calculate distribution of medical entity types using observed labels."""
-        mapped = []
-        for e in entities:
-            label = str(e.get("entity_group", "")).upper()
-            mapped.append(MEDICAL_CATEGORY_MAP.get(label, "other"))
-        
-        total = len(mapped)
-        if total == 0:
-            return {f"{cat}_ratio": 0.0 for cat in MEDICAL_CATEGORY_ORDER}
-        
-        counts = Counter(mapped)
-        return {
-            f"{cat}_ratio": round(counts.get(cat, 0) / total, 3)
-            for cat in MEDICAL_CATEGORY_ORDER
-        }
-    
-    def _rare_term_ratio(self, entities: List[Dict]) -> Dict[str, float]:
-        """Calculate rare term ratio (document frequency = 1)."""
-        terms = [self._normalize_entity(e).lower() for e in entities]
-        terms = [t for t in terms if t]
-        
-        if not terms:
-            return {'ratio_unique': 0.0, 'ratio_mentions': 0.0}
-        
-        df = Counter(terms)
-        rare_terms = {t for t, c in df.items() if c == 1}
-        
-        ratio_unique = len(rare_terms) / len(df) if df else 0.0
-        ratio_mentions = sum(1 for t in terms if t in rare_terms) / len(terms) if terms else 0.0
-        
-        return {'ratio_unique': ratio_unique, 'ratio_mentions': ratio_mentions}
-    
+            return str(e.get("text") or e.get("word") or "").strip()
+        return str(e).strip()
+
     def _entity_group_counts(self, entities: List[Dict]) -> Dict[str, int]:
-        """Count raw entity_group occurrences for downstream reporting."""
+        """
+        Count raw entity_group occurrences for downstream reporting.
+
+        This is used to build the separate entity_counts CSV in the pipeline.
+        """
         counts = Counter()
         for e in entities:
             label = str(e.get("entity_group", "")).upper()
             if label:
                 counts[label] += 1
         return dict(counts)
-    
-    def _term_clustering(self, text: str, entities: List[Dict]) -> Dict[str, Any]:
-        """Analyze term clustering using fixed-size token windows."""
-        tokens = [t for t in word_tokenize(text) if t.strip()]
-        if len(tokens) < 2:
-            return {'concentrated': False, 'gini': 0.0, 'max_share': 0.0}
-        
-        chunk_size = DEFAULT_CLUSTER_TOKEN_WINDOW
-        if len(tokens) < chunk_size * 2:
-            chunk_size = max(1, len(tokens) // 2)
-        
-        chunks = []
-        for i in range(0, len(tokens), chunk_size):
-            chunk = " ".join(tokens[i:i + chunk_size]).strip()
-            if chunk:
-                chunks.append(chunk)
-        
-        if len(chunks) < 2:
-            return {'concentrated': False, 'gini': 0.0, 'max_share': 0.0}
 
-        # Simple approach: count entities per paragraph (by text matching)
-        counts = []
-        for chunk in chunks:
-            chunk_lower = chunk.lower()
-            count = sum(1 for e in entities if self._normalize_entity(e).lower() in chunk_lower)
-            counts.append(count)
-        
-        total = sum(counts)
-        if total < 5:  # Too few entities to judge
-            return {'concentrated': False, 'gini': 0.0, 'max_share': 0.0}
-        
-        props = [c / total for c in counts]
-        max_share = max(props) if props else 0.0
-        
-        # Gini coefficient
-        sorted_counts = sorted(counts)
-        n = len(sorted_counts)
-        cum = sum(sorted_counts)
-        if cum == 0:
-            gini = 0.0
-        else:
-            weighted_sum = sum((i + 1) * x for i, x in enumerate(sorted_counts))
-            gini = (n + 1 - 2 * weighted_sum / cum) / n if n > 0 else 0.0
-        
-        concentrated = max_share >= 0.5 or gini >= 0.5
-        
-        return {
-            'concentrated': concentrated,
-            'gini': gini,
-            'max_share': max_share
-        }
-    
     def _empty_medical_features(self) -> Dict[str, Any]:
-        """Return empty medical features."""
-        return {
-            'medical_density': 0.0,
-            'medical_mention_count': 0,
-            'medical_unique_count': 0,
-            **{f"{cat}_ratio": 0.0 for cat in MEDICAL_CATEGORY_ORDER},
-            'rare_term_ratio_unique': 0.0,
-            'rare_term_ratio_mentions': 0.0,
-            'term_clustering_concentrated': False,
-            'term_clustering_gini': 0.0,
-            'term_clustering_max_share': 0.0,
-            'entity_group_counts': {}
+        """
+        Return an empty medical feature dictionary.
+
+        All keys that appear in extract_medical_features are present here
+        with neutral defaults. This guarantees a consistent schema.
+        """
+        base = {
+            "medical_density": 0.0,
+            "medical_mention_count": 0,
+            "medical_unique_count": 0,
+            "rare_term_ratio_unique": 0.0,
+            "rare_term_ratio_mentions": 0.0,
+            "term_clustering_concentrated": False,
+            "term_clustering_gini": 0.0,
+            "term_clustering_max_share": 0.0,
+            "entity_group_counts": {},
         }
-    
+        for cat in CATEGORIES:
+            base[f"{cat}_ratio"] = 0.0
+        return base
+
     def _capture_model_labels(self, model) -> None:
         """Capture label list from model config for documentation."""
         self.model_labels = sorted({label.upper() for label in model.config.id2label.values()})
-    
+
     def _update_entity_counts(self, entities: Optional[List[Dict]]) -> None:
         """Update observed entity-group frequencies and refresh documentation."""
         if not entities:
@@ -451,7 +482,7 @@ class FeatureExtractor:
             if label:
                 self.entity_counts[label] += 1
         self._write_label_doc()
-    
+
     def _write_label_doc(self) -> None:
         """Persist label inventory and current frequency counts."""
         try:
@@ -464,87 +495,106 @@ class FeatureExtractor:
                 lines.extend(["", "## entity_group values"])
                 lines.extend(f"- {label}" for label in self.model_labels)
             if self.entity_counts:
-                lines.extend(["", "## Observed entity_group counts", "| entity_group | count |", "| --- | ---: |"])
-                for label, count in sorted(self.entity_counts.items(), key=lambda item: item[1], reverse=True):
+                lines.extend(
+                    [
+                        "",
+                        "## Observed entity_group counts",
+                        "| entity_group | count |",
+                        "| --- | ---: |",
+                    ]
+                )
+                for label, count in sorted(
+                    self.entity_counts.items(), key=lambda item: item[1], reverse=True
+                ):
                     lines.append(f"| {label} | {count} |")
             self.label_doc_path.write_text("\n".join(lines))
         except Exception as e:
             print(f"⚠️  Failed to update label documentation: {e}")
-    
+
     # ==================== SYNTACTIC FEATURES ====================
-    
+
     def extract_syntactic_features(self, text: str, doc=None) -> Dict[str, float]:
         """
         Extract syntactic complexity features.
-        
+
         Args:
             text: Input text
             doc: Pre-processed spaCy doc (optional)
-        
+
         Returns:
             Dictionary of syntactic features
         """
         if self.nlp is None:
             return self._empty_syntactic_features()
-        
+
         try:
             if doc is None:
                 doc = self.nlp(text)
-            
+
             sentences = list(doc.sents)
             if not sentences:
                 return self._empty_syntactic_features()
-            
+
             # Passive voice ratio
             passive_count = sum(self._detect_passive(sent) for sent in sentences)
             passive_ratio = passive_count / len(sentences)
-            
+
             # Sentence length statistics
-            sent_lengths = [len([t for t in sent if not t.is_punct and not t.is_space]) 
-                          for sent in sentences]
+            sent_lengths = [
+                len([t for t in sent if not t.is_punct and not t.is_space])
+                for sent in sentences
+            ]
             avg_sent_len = statistics.mean(sent_lengths)
-            std_sent_len = statistics.stdev(sent_lengths) if len(sent_lengths) > 1 else 0.0
-            
+            std_sent_len = (
+                statistics.stdev(sent_lengths) if len(sent_lengths) > 1 else 0.0
+            )
+
             # Syntax tree depth
             tree_depth = self._avg_tree_depth(sentences)
-            
+
             # Subordinate clause density
             sub_clause_density = self._subordinate_clause_density(sentences)
-            
+
             # Average dependency distance
             avg_dep_dist = self._avg_dependency_distance(doc)
-            
+
             # Pronoun frequency
             total_words = len([t for t in doc if not t.is_punct and not t.is_space])
             pronoun_count = len([t for t in doc if t.pos_ == "PRON"])
             pronoun_freq = pronoun_count / total_words if total_words > 0 else 0.0
-            
+
             return {
-                'passive_voice_ratio': round(passive_ratio, 3),
-                'average_sentence_length': round(avg_sent_len, 2),
-                'sentence_length_std': round(std_sent_len, 2),
-                'syntax_tree_depth': round(tree_depth, 2),
-                'subordinate_clause_density': round(sub_clause_density, 3),
-                'average_dependency_distance': round(avg_dep_dist, 2),
-                'pronoun_frequency': round(pronoun_freq, 3)
+                "passive_voice_ratio": round(passive_ratio, 3),
+                "average_sentence_length": round(avg_sent_len, 2),
+                "sentence_length_std": round(std_sent_len, 2),
+                "syntax_tree_depth": round(tree_depth, 2),
+                "subordinate_clause_density": round(sub_clause_density, 3),
+                "average_dependency_distance": round(avg_dep_dist, 2),
+                "pronoun_frequency": round(pronoun_freq, 3),
             }
-        
+
         except Exception as e:
             print(f"⚠️  Syntactic feature extraction failed: {e}")
             return self._empty_syntactic_features()
-    
+
     def _detect_passive(self, sent) -> int:
         """Detect passive voice constructions."""
         count = 0
         for token in sent:
-            if (token.dep_ == "auxpass" or 
-                (token.dep_ == "aux" and token.tag_ == "VBN" and 
-                 any(child.dep_ == "auxpass" for child in token.children))):
+            if (
+                token.dep_ == "auxpass"
+                or (
+                    token.dep_ == "aux"
+                    and token.tag_ == "VBN"
+                    and any(child.dep_ == "auxpass" for child in token.children)
+                )
+            ):
                 count += 1
         return count
-    
+
     def _avg_tree_depth(self, sentences) -> float:
         """Calculate average syntax tree depth."""
+
         def get_depth(token, visited=None):
             if visited is None:
                 visited = set()
@@ -554,78 +604,86 @@ class FeatureExtractor:
             if not list(token.children):
                 return 1
             return 1 + max(get_depth(c, visited.copy()) for c in token.children)
-        
+
         depths = []
         for sent in sentences:
             root = next((t for t in sent if t.dep_ == "ROOT"), None)
             if root:
                 depths.append(get_depth(root))
-        
+
         return statistics.mean(depths) if depths else 0.0
-    
+
     def _subordinate_clause_density(self, sentences) -> float:
         """Calculate subordinate clause density."""
         sub_clauses = 0
         total_clauses = 0
-        
+
         for sent in sentences:
             for token in sent:
-                if token.dep_ in ["mark", "relcl"] or token.tag_ in ["WDT", "WP", "WP$", "WRB"]:
+                if token.dep_ in ["mark", "relcl"] or token.tag_ in [
+                    "WDT",
+                    "WP",
+                    "WP$",
+                    "WRB",
+                ]:
                     sub_clauses += 1
             main_clauses = len([t for t in sent if t.dep_ == "ROOT"])
             total_clauses += main_clauses + sub_clauses
-        
+
         return sub_clauses / total_clauses if total_clauses > 0 else 0.0
-    
+
     def _avg_dependency_distance(self, doc) -> float:
         """Calculate average dependency distance."""
         distances = []
         for token in doc:
             if token.dep_ != "ROOT" and token.head != token:
                 distances.append(abs(token.i - token.head.i))
-        
+
         return statistics.mean(distances) if distances else 0.0
-    
+
     def _empty_syntactic_features(self) -> Dict[str, float]:
         """Return empty syntactic features."""
         return {
-            'passive_voice_ratio': 0.0,
-            'average_sentence_length': 0.0,
-            'sentence_length_std': 0.0,
-            'syntax_tree_depth': 0.0,
-            'subordinate_clause_density': 0.0,
-            'average_dependency_distance': 0.0,
-            'pronoun_frequency': 0.0
+            "passive_voice_ratio": 0.0,
+            "average_sentence_length": 0.0,
+            "sentence_length_std": 0.0,
+            "syntax_tree_depth": 0.0,
+            "subordinate_clause_density": 0.0,
+            "average_dependency_distance": 0.0,
+            "pronoun_frequency": 0.0,
         }
-    
+
     # ==================== UNIFIED EXTRACTION ====================
-    
-    def extract_all_features(self, text: str, 
-                            include_medical: bool = True,
-                            include_syntactic: bool = True) -> Dict[str, Any]:
+
+    def extract_all_features(
+        self,
+        text: str,
+        include_medical: bool = True,
+        include_syntactic: bool = True,
+    ) -> Dict[str, Any]:
         """
         Extract all features from text with shared preprocessing.
-        
+
         Args:
             text: Input text
             include_medical: Whether to extract medical features
             include_syntactic: Whether to extract syntactic features
-        
+
         Returns:
             Dictionary of all features
         """
         if not text or not isinstance(text, str) or len(text.strip()) < 10:
             return self._empty_all_features()
-        
-        features = {}
-        
+
+        features: Dict[str, Any] = {}
+
         # Pre-tokenize for efficiency
         sentences = sent_tokenize(text)
         words = word_tokenize(text.lower())
-        
+
         # 1. Readability features (fast)
         features.update(self.extract_readability_features(text, words, sentences))
-        
+
         # 2. Medical features (slow, optional)
         if include_medical and self.ner_pipeline is not None:
             try:
@@ -636,7 +694,7 @@ class FeatureExtractor:
                 features.update(self._empty_medical_features())
         elif include_medical:
             features.update(self._empty_medical_features())
-        
+
         # 3. Syntactic features (medium speed)
         if include_syntactic and self.nlp is not None:
             try:
@@ -648,16 +706,18 @@ class FeatureExtractor:
                 features.update(self._empty_syntactic_features())
         elif include_syntactic:
             features.update(self._empty_syntactic_features())
-        
+
         return features
-    
+
     def _empty_all_features(self) -> Dict[str, Any]:
         """Return all empty features."""
         return {
             **self._empty_readability_features(),
             **self._empty_medical_features(),
-            **self._empty_syntactic_features()
+            **self._empty_syntactic_features(),
         }
+
+
 
 
 # Convenience function
