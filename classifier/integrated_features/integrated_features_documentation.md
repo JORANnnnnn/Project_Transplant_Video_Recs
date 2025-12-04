@@ -146,90 +146,75 @@ Readability features assess how easy or difficult a text is to read and understa
 
 ### 2. Medical Term Features
 
-Medical features analyze biomedical terminology extracted via Named Entity Recognition.
+Medical features analyze biomedical terminology extracted from cleaned transcript text using the biomedical NER model.
 
 #### 2.1 Medical Term Density (`medical_density`)
-- **Definition**: Ratio of medical entity mentions to total words
+- **Definition**: Ratio of medical entity mentions to the total word count in the cleaned transcript.
 - **Formula**: `Medical Entity Mentions / Total Words`
-- **Interpretation**: 
+- **Interpretation**:
   - < 0.01: Low medical content
-  - 0.01-0.05: Moderate medical content
+  - 0.01–0.05: Moderate medical content
   - > 0.05: High medical content
-- **Range**: 0.0-1.0
+- **Range**: 0.0–1.0
 
 #### 2.2 Medical Mention Count (`medical_mention_count`)
-- **Definition**: Total number of medical entity mentions (including duplicates)
+- **Definition**: Total number of medical entity mentions, including duplicates.
 - **Type**: Integer
-- **Interpretation**: Raw count of all medical terms found
+- **Interpretation**: Raw count of all biomedical entities detected.
 
 #### 2.3 Medical Unique Count (`medical_unique_count`)
-- **Definition**: Number of unique medical terms (case-insensitive)
+- **Definition**: Number of unique medical terms (case-insensitive).
 - **Type**: Integer
-- **Interpretation**: Vocabulary size of medical terminology
+- **Interpretation**: Represents the variety of biomedical terminology in the transcript.
 
 #### 2.4 Category Ratio Features (`{category}_ratio`)
-- **Definition**: Proportion of medical entities belonging to each category
+- **Definition**: Proportion of medical entities mapped into each high-level biomedical category.
 - **Categories**: `condition`, `symptom`, `therapy`, `diagnostic`, `medication`, `anatomy`, `location`, `measurement`, `context`, `activity`, `other`
-- **Formula**: `Count(category entities) / Total Entities`
-- **Range**: 0.0-1.0
-- **Sum**: All category ratios sum to 1.0
+- **Formula**: `Count(category entities) / medical_mention_count`
+- **Range**: 0.0–1.0
+- **Sum**: Ratios sum to 1.0 when entities are present.
 
-#### 2.5 Rare Term Ratio - Unique (`rare_term_ratio_unique`)
-- **Definition**: Proportion of unique medical terms that appear only once in the document
-- **Formula**: `Unique Terms with DF=1 / Total Unique Terms`
-- **Interpretation**: 
-  - High: Many one-off medical terms (specialized vocabulary)
-  - Low: Terms are repeated (common vocabulary)
-- **Range**: 0.0-1.0
+#### 2.5 Rare Term Ratio – Unique (`rare_term_ratio_unique`)
+- **Definition**: Fraction of unique medical terms that appear only once in the transcript.
+- **Formula**: `# Unique Terms with Frequency = 1 / medical_unique_count`
+- **Interpretation**:
+  - High: Diverse, specialized vocabulary
+  - Low: Frequently repeated terminology
+- **Range**: 0.0–1.0
 
-#### 2.6 Rare Term Ratio - Mentions (`rare_term_ratio_mentions`)
-- **Definition**: Proportion of all medical mentions that are rare terms (appear only once)
-- **Formula**: `Mentions of Rare Terms / Total Mentions`
-- **Interpretation**: How much of the medical content consists of unique terms
-- **Range**: 0.0-1.0
+#### 2.6 Rare Term Ratio – Mentions (`rare_term_ratio_mentions`)
+- **Definition**: Fraction of all medical mentions that correspond to rare (frequency-1) terms.
+- **Formula**: `# Mentions of Rare Terms / medical_mention_count`
+- **Interpretation**: Indicates how much of the medical content comes from non-repeated terms.
+- **Range**: 0.0–1.0
 
 #### 2.7 Term Clustering Features
 
+Medical term clustering is computed by dividing the cleaned transcript into **5 equal-length character segments** and assigning each entity by its character offset.
+
 ##### 2.7.1 Concentrated (`term_clustering_concentrated`)
-- **Definition**: Boolean indicating if medical terms are clustered in specific sections
-- **Criteria**: `True` if:
-  - Maximum chunk share ≥ 0.5, OR
-  - Gini coefficient ≥ 0.5
-- **Interpretation**: 
-  - `True`: Terms concentrated in specific sections (e.g., introduction, case study)
-  - `False`: Terms distributed throughout text
+- **Definition**: Boolean flag indicating whether medical terms are concentrated in specific transcript regions.
+- **Criteria**: `True` if `term_clustering_max_share ≥ 0.30`
+- **Interpretation**:
+  - `True`: Clear clustering in specific regions
+  - `False`: Distributed across the transcript
 
 ##### 2.7.2 Gini Coefficient (`term_clustering_gini`)
-- **Definition**: Measures inequality in term distribution across text chunks
-- **Formula**: `(n + 1 - 2 × Σ(i × x_i)) / n`
-  - `n` = number of chunks
-  - `x_i` = sorted entity counts per chunk
+- **Definition**: Measures inequality in entity distribution across the 5 segments.
+- **Range**: 0.0–1.0
 - **Interpretation**:
-  - 0.0: Perfectly equal distribution
-  - 0.5: Moderate inequality
-  - 1.0: Perfect inequality (all terms in one chunk)
-- **Range**: 0.0-1.0
+  - 0.0: Evenly distributed
+  - > 0.5: Strong clustering
 
 ##### 2.7.3 Maximum Share (`term_clustering_max_share`)
-- **Definition**: Proportion of medical terms in the chunk with most terms
-- **Formula**: `Max(entities in chunk) / Total Entities`
-- **Interpretation**: 
-  - < 0.3: Distributed
-  - 0.3-0.5: Somewhat concentrated
-  - ≥ 0.5: Highly concentrated
-- **Range**: 0.0-1.0
-
-**Clustering Method**:
-- Text is divided into fixed-size token windows (default: 80 tokens)
-- For short texts (< 160 tokens), uses half the text length
-- Entities are matched to chunks via text substring matching
-- Requires minimum 5 entities to calculate clustering metrics
+- **Definition**: Fraction of all medical mentions occurring in the most entity-dense segment.
+- **Formula**: `Max(segment entity count) / medical_mention_count`
+- **Range**: 0.0–1.0
 
 #### 2.8 Entity Group Counts (`entity_group_counts`)
-- **Definition**: Dictionary mapping raw NER labels to their occurrence counts
+- **Definition**: Dictionary mapping raw NER model labels (e.g., `DISEASE_DISORDER`, `MEDICATION`) to their occurrence counts.
 - **Type**: Dictionary[str, int]
-- **Purpose**: Preserves original label information for detailed analysis
-- **Example**: `{"DISEASE_DISORDER": 15, "MEDICATION": 8, ...}`
+- **Purpose**: Preserves raw label information for downstream analysis.
 
 ---
 
