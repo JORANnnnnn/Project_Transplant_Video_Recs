@@ -19,6 +19,9 @@ warnings.filterwarnings('ignore')
 from integrated_features import create_extractor
 
 
+
+
+
 class FeatureExtractionPipeline:
     """
     Robust pipeline for extracting features from YouTube transcripts with:
@@ -357,8 +360,12 @@ class FeatureExtractionPipeline:
         return final_df
     
     def _load_all_results(self) -> pd.DataFrame:
-        """Load all batch results from CSV files."""
-        batch_files = sorted(self.output_dir.glob("batch_*.csv"))
+        """Load all batch results from CSV files (excluding entity_counts files)."""
+        # Only load batch files that don't contain "entity_counts" in the name
+        batch_files = sorted([
+            f for f in self.output_dir.glob("batch_*.csv")
+            if "_entity_counts" not in f.name
+        ])
         
         if not batch_files:
             return pd.DataFrame()
@@ -372,7 +379,15 @@ class FeatureExtractionPipeline:
                 print(f"⚠️  Failed to load {file}: {e}")
         
         if dfs:
-            return pd.concat(dfs, ignore_index=True)
+            combined_df = pd.concat(dfs, ignore_index=True)
+            # Remove duplicates by video_id (keep last occurrence)
+            if 'video_id' in combined_df.columns:
+                initial_count = len(combined_df)
+                combined_df = combined_df.drop_duplicates(subset=['video_id'], keep='last')
+                duplicates_removed = initial_count - len(combined_df)
+                if duplicates_removed > 0:
+                    print(f"🔍 Removed {duplicates_removed} duplicate records by video_id")
+            return combined_df
         return pd.DataFrame()
     
     def _compile_final_results(self) -> pd.DataFrame:
@@ -383,8 +398,13 @@ class FeatureExtractionPipeline:
         if count_cols:
             final_df = final_df.drop(columns=count_cols)
         
-        # Save final combined file
-        final_file = self.output_dir / "features_complete.csv"
+        # Determine data directory (same directory as database)
+        db_path = Path(self.db_path)
+        data_dir = db_path.parent if db_path.is_file() else db_path
+        data_dir.mkdir(exist_ok=True, parents=True)
+        
+        # Save final combined file to data directory
+        final_file = data_dir / "transcript_feature_complete.csv"
         try:
             final_df.to_csv(final_file, index=False)
             print(f"✅ Final results saved to: {final_file}")
@@ -467,7 +487,7 @@ class FeatureExtractionPipeline:
 
 def find_database(start_path: str = None) -> str:
     """
-    Find youtube_data.db by searching up the directory tree.
+    Find youtube_data.db by searching current directory, subdirectories, and parent directories.
     
     Args:
         start_path: Starting directory (default: current working directory)
@@ -480,9 +500,24 @@ def find_database(start_path: str = None) -> str:
     
     current = Path(start_path).resolve()
     
-    # Search current and parent directories
+    # First, search in current directory and common subdirectories
+    search_paths = [
+        current / "youtube_data.db",
+        current / "data" / "youtube_data.db",
+        current / "youtube_data" / "youtube_data.db",
+    ]
+    
+    for db_path in search_paths:
+        if db_path.exists():
+            return str(db_path)
+    
+    # Then search up the directory tree
     for _ in range(5):  # Search up to 5 levels
         db_path = current / "youtube_data.db"
+        if db_path.exists():
+            return str(db_path)
+        # Also check data subdirectory in parent
+        db_path = current / "data" / "youtube_data.db"
         if db_path.exists():
             return str(db_path)
         current = current.parent
@@ -501,7 +536,8 @@ def main():
     print("🎬 YOUTUBE TRANSCRIPT FEATURE EXTRACTION PIPELINE")
     print("=" * 70)
     
-    # Find database
+    #Using excel file to get the database path
+    
     try:
         db_path = find_database()
         print(f"✅ Found database: {db_path}")
@@ -546,4 +582,5 @@ def main():
 
 
 if __name__ == "__main__":
-    results = main()
+    # results = main()
+    

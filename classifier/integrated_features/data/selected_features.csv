@@ -1,0 +1,11 @@
+feature_name,rank
+meta_comment_count,1
+meta_subscriber_count,2
+meta_sentiment,3
+average_word_length,4
+symptom_ratio,5
+medication_ratio,6
+other_ratio,7
+syntax_tree_depth,8
+subordinate_clause_density,9
+average_dependency_distance,10

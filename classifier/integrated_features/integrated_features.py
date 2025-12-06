@@ -578,7 +578,12 @@ class FeatureExtractor:
             return self._empty_syntactic_features()
 
     def _detect_passive(self, sent) -> int:
-        """Detect passive voice constructions."""
+        """
+        Detect passive voice constructions.
+        
+        Passive voice could be considered as professional language
+        
+        """
         count = 0
         for token in sent:
             if (
@@ -593,7 +598,13 @@ class FeatureExtractor:
         return count
 
     def _avg_tree_depth(self, sentences) -> float:
-        """Calculate average syntax tree depth."""
+        """
+        
+        Calculate average syntax tree depth.
+        
+        Synatx tree depth definition:
+        The depth of a syntax tree is the maximum number of edges on a path from the root to a leaf node.
+        """
 
         def get_depth(token, visited=None):
             if visited is None:
@@ -614,7 +625,14 @@ class FeatureExtractor:
         return statistics.mean(depths) if depths else 0.0
 
     def _subordinate_clause_density(self, sentences) -> float:
-        """Calculate subordinate clause density."""
+        """
+        
+        Calculate subordinate clause density.
+        
+        Subordinate clause density definition:
+        The ratio of subordinate clauses to total clauses.
+        
+        """
         sub_clauses = 0
         total_clauses = 0
 
