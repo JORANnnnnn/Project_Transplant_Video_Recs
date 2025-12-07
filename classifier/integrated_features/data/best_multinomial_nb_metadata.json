@@ -1,0 +1,58 @@
+{
+  "model_name": "Multinomial Naive Bayes with Feature Selection",
+  "problem_type": "binary_classification",
+  "threshold": 0.8,
+  "training_date": "2025-12-06 22:31:26",
+  "n_features": 31,
+  "n_selected_features": 15,
+  "selected_features": [
+    "meta_video_duration",
+    "meta_like_count",
+    "meta_comment_count",
+    "meta_subscriber_count",
+    "meta_sentiment",
+    "average_word_length",
+    "symptom_ratio",
+    "medication_ratio",
+    "measurement_ratio",
+    "other_ratio",
+    "sentence_length_std",
+    "syntax_tree_depth",
+    "subordinate_clause_density",
+    "average_dependency_distance",
+    "pronoun_frequency"
+  ],
+  "n_train_samples": 140,
+  "n_test_samples": 42,
+  "best_parameters": {
+    "classification__alpha": 100.0,
+    "classification__class_prior": null,
+    "classification__fit_prior": false,
+    "feature_selection__k": 15
+  },
+  "best_cv_score": 0.6428571428571429,
+  "training_note": "Model was retrained on FULL training set with best parameters from GridSearchCV",
+  "nb_configuration": {
+    "alpha": 100.0,
+    "fit_prior": false,
+    "class_prior": null
+  },
+  "metrics": {
+    "train_accuracy": 0.65,
+    "test_accuracy": 0.5476190476190477,
+    "train_precision": 0.6342307692307692,
+    "test_precision": 0.7625,
+    "train_recall": 0.65,
+    "test_recall": 0.5476190476190477,
+    "train_f1": 0.5651396062579535,
+    "test_f1": 0.43121881682109764,
+    "overfitting_gap": 0.10238095238095235,
+    "train_auc": 0.6146728354263054,
+    "test_auc": 0.46258503401360546
+  },
+  "cv_metrics": {
+    "train_cv_score": 0.6303571428571428,
+    "test_cv_score": 0.6428571428571429,
+    "cv_overfitting_gap": -0.012500000000000067
+  }
+}

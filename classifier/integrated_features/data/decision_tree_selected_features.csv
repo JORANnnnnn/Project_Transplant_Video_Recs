@@ -1,0 +1,16 @@
+feature_name,importance,rank
+syntax_tree_depth,0.3012125679895106,1
+average_dependency_distance,0.17925400670937855,2
+meta_like_count,0.13953291157948608,3
+average_word_length,0.1323980727281982,4
+measurement_ratio,0.13078990586000505,5
+pronoun_frequency,0.11681253513342152,6
+meta_video_duration,0.0,7
+meta_comment_count,0.0,8
+meta_subscriber_count,0.0,9
+meta_sentiment,0.0,10
+symptom_ratio,0.0,11
+medication_ratio,0.0,12
+other_ratio,0.0,13
+sentence_length_std,0.0,14
+subordinate_clause_density,0.0,15

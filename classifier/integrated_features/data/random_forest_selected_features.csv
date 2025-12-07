@@ -1,0 +1,16 @@
+feature_name,importance,rank
+syntax_tree_depth,0.09911054278223752,1
+meta_subscriber_count,0.09116010705527468,2
+average_dependency_distance,0.09018270473520106,3
+pronoun_frequency,0.08721818824935429,4
+subordinate_clause_density,0.08677200343069617,5
+meta_like_count,0.08590626788279598,6
+average_word_length,0.0812961583805928,7
+other_ratio,0.07990658076416556,8
+measurement_ratio,0.06230424911658117,9
+symptom_ratio,0.06140185981231524,10
+sentence_length_std,0.06119602248099601,11
+meta_video_duration,0.055294292878662686,12
+medication_ratio,0.03857710015056801,13
+meta_comment_count,0.019673922280558954,14
+meta_sentiment,0.0,15
