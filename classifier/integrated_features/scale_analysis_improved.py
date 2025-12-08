@@ -179,3 +179,4 @@ else:
     print(f"   Average Std: {scale_df['Std'].mean():.2f}")
     print(f"   Median Std: {scale_df['Std'].median():.2f}")
 
+
