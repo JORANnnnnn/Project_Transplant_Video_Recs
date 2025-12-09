@@ -14,7 +14,7 @@ st.title("🔍 Search Transplant Education Videos")
 # --------------------------- Caching -------------------------------
 @st.cache_data(show_spinner=False)
 def load_recommended_data(file_path: Path) -> pd.DataFrame:
-    """Load Excel and filter only LLM-recommended videos."""
+    """Load Excel with top K recommendations (already filtered)."""
     if not file_path.exists():
         st.error(f"File not found: {file_path}")
         st.stop()
@@ -23,13 +23,8 @@ def load_recommended_data(file_path: Path) -> pd.DataFrame:
     df = pd.read_excel(file_path, sheet_name=sheet)
     df.columns = [str(c).strip() for c in df.columns]
     
-    # Filter only recommended videos
-    if 'Recommendation_gpt_5' in df.columns:
-        df = df[df['Recommendation_gpt_5'] == 1].copy()
-    elif 'Do you recommend this video or not' in df.columns:
-        df = df[df['Do you recommend this video or not'] == 1].copy()
-    else:
-        st.warning("No recommendation column found. Showing all videos.")
+    # The merged topK dataset already contains only recommended videos
+    # No need to filter further
     
     return df.reset_index(drop=True)
 
@@ -176,7 +171,7 @@ def filter_contains_any(df: pd.DataFrame, cols: List[str], q: str) -> pd.DataFra
     return df[mask] if mask is not None else df
 
 # --------------------------- Load Data -------------------------------
-data_path = Path("youtube_database_export_gpt5_results.xlsx")
+data_path = Path("youtube_videos_merged_topK.xlsx")
 df = load_recommended_data(data_path)
 
 # Process data
@@ -209,7 +204,12 @@ def render_video_card(row: pd.Series, idx: int):
     duration = row.get('duration_formatted', '—')
     engagement = row.get('engagement_score', 0)
     video_url = row.get('video_url', '')
-    category = row.get('Category_gpt_5') or row.get('Category', 'Unknown')
+    # Handle merged category columns
+    category = (row.get('Category_gpt_5_topk') or 
+                row.get('Category_gpt_5_gpt5') or 
+                row.get('Category_gpt_5') or 
+                row.get('Category') or 
+                'Unknown')
     
     st.markdown("---")
     st.markdown(f"#### {title}")
@@ -218,8 +218,14 @@ def render_video_card(row: pd.Series, idx: int):
     if video_url:
         st.video(video_url)
     
-    # Metrics in columns
-    metric_col1, metric_col2, metric_col3, metric_col4, metric_col5 = st.columns(5)
+    # Get ranking metrics
+    llm_ranking = row.get('LLM Ranking')
+    final_score = row.get('final_score')
+    pemat_score = row.get('PEMAT Score')
+    is_understandable = row.get('is_understandable')
+    
+    # Metrics in columns (expanded to show ranking)
+    metric_col1, metric_col2, metric_col3, metric_col4, metric_col5, metric_col6 = st.columns(6)
     
     with metric_col1:
         st.metric("👁️ Views", f"{views:,}" if views else "—")
@@ -230,14 +236,30 @@ def render_video_card(row: pd.Series, idx: int):
     with metric_col4:
         st.metric("⏱️ Length", duration)
     with metric_col5:
-        st.metric("⭐ Engagement", f"{engagement:.2f}")
+        if llm_ranking is not None and pd.notna(llm_ranking):
+            st.metric("🏆 LLM Rank", f"#{int(llm_ranking)}")
+        elif final_score is not None and pd.notna(final_score):
+            st.metric("⭐ Final Score", f"{final_score:.3f}")
+        else:
+            st.metric("⭐ Engagement", f"{engagement:.2f}")
+    with metric_col6:
+        if pemat_score is not None and pd.notna(pemat_score):
+            st.metric("📊 PEMAT", f"{pemat_score:.2f}")
+        else:
+            st.metric("⭐ Engagement", f"{engagement:.2f}")
     
-    # Channel and category info
-    info_col1, info_col2 = st.columns(2)
+    # Channel, category, and ranking info
+    info_col1, info_col2, info_col3 = st.columns(3)
     with info_col1:
         st.caption(f"📺 Channel: {channel}")
     with info_col2:
         st.caption(f"📂 Category: {category}")
+    with info_col3:
+        if is_understandable is not None and pd.notna(is_understandable):
+            understand_text = "✅ Understandable" if is_understandable else "❌ Not Understandable"
+            st.caption(understand_text)
+        elif final_score is not None and pd.notna(final_score):
+            st.caption(f"⭐ Score: {final_score:.3f}")
     
     # Description
     if description and str(description).strip() and str(description) != 'nan':
@@ -319,6 +341,9 @@ with col2:
 with col3:
     st.subheader("📊 Sort By")
     sort_options = [
+        "LLM Ranking (Best First)",
+        "Final Score (Highest First)",
+        "PEMAT Score (Highest First)",
         "Engagement Score (Most Reputable)",
         "Views (Most Watched)",
         "Likes (Most Liked)",
@@ -339,6 +364,14 @@ st.markdown("---")
 # --------------------------- Apply Filters -------------------------------
 work = df.copy()
 
+# Filter out promotional videos
+promo_keywords = ['Promotional', 'promotional', 'promo']
+category_cols = [c for c in work.columns if 'category' in c.lower() and 'Category' in c]
+for cat_col in category_cols:
+    if cat_col in work.columns:
+        work = work[~work[cat_col].astype(str).str.contains('promo', case=False, na=False)]
+        break  # Use first matching category column
+
 # Search filter
 if search_query:
     searchable_cols = ['title', 'description', 'channel_title', 'search_term', 'caption_text']
@@ -357,7 +390,13 @@ if length_filter:
     work = work[work['duration_bucket'].isin(length_filter)]
 
 # Sorting
-if sort_choice == "Engagement Score (Most Reputable)":
+if sort_choice == "LLM Ranking (Best First)":
+    work = work.sort_values('LLM Ranking', ascending=True, na_position='last')  # Lower rank number = better
+elif sort_choice == "Final Score (Highest First)":
+    work = work.sort_values('final_score', ascending=False, na_position='last')
+elif sort_choice == "PEMAT Score (Highest First)":
+    work = work.sort_values('PEMAT Score', ascending=False, na_position='last')
+elif sort_choice == "Engagement Score (Most Reputable)":
     work = work.sort_values('engagement_score', ascending=False)
 elif sort_choice == "Views (Most Watched)":
     work['_views'] = work['view_count'].apply(safe_int)
@@ -381,7 +420,12 @@ elif sort_choice == "Title (A→Z)":
 work = work.head(max_videos).reset_index(drop=True)
 
 # --------------------------- Group by Category (LLM Categories) -------------------------------
-if 'Category_gpt_5' in work.columns:
+# Check for category column (could be from topK or gpt5 merge)
+if 'Category_gpt_5_topk' in work.columns:
+    category_col = 'Category_gpt_5_topk'
+elif 'Category_gpt_5_gpt5' in work.columns:
+    category_col = 'Category_gpt_5_gpt5'
+elif 'Category_gpt_5' in work.columns:
     category_col = 'Category_gpt_5'
 elif 'Category' in work.columns:
     category_col = 'Category'
