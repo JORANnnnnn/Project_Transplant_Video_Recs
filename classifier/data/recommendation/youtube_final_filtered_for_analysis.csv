@@ -1,0 +1,560 @@
+video_id,Category_gpt_5,Recommendation_gpt_5,is_understandable,PEMAT Score,LLM Ranking,label_AI,is_predicted_AI,label_human,is_predicted_human
+fKyzKlYGZhA,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+McEpJ7Dm1Rw,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+24v2zQHZUAE,Patient education - post surgery,1,0.0,0.5714285714,0.4285714286,0.0,0.0,1.0,0.0
+U8ZVlKI_yoA,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,0.0
+o1XNQs21gGA,Patient Education - waitlist,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+obss0_8xIBs,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,0.0
+u8FgQdrUX8w,Patient education - surgery,1,1.0,1.0,1.0,,,,
+lGktTbcUu3E,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+D0RxVf_AkMM,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,1.0
+ofLDgqgnzlg,Patient Education - waitlist,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+9ItbKVrDOtQ,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+1G5Kkl_xjFY,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+uag1jIEuKTw,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+cVSSdly_m7A,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,0.0
+E9Dnyym6a94,Patient education - consideration,1,0.0,0.7142857143,0.5357142857,0.0,0.0,0.0,0.0
+kv3PN9sti9Y,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+a7gJ73YIz40,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+SdH-IhgHD8U,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,0.0
+zk2oTMxXMNU,Patient education - surgery,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+bvCRH0A6kxY,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,0.0,0.0
+AUMTTZ5aVIQ,Patient education - surgery,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+DgJMRaz3xrM,Patient education - consideration,1,1.0,1.0,1.0,1.0,0.0,1.0,1.0
+x49Yje5VGbc,Patient education - consideration,1,1.0,1.0,1.0,1.0,0.0,1.0,1.0
+1KceELBEzgw,Patient education - consideration,1,0.0,0.4285714286,0.3214285714,0.0,0.0,1.0,0.0
+yZ2jdYoZeFw,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,1.0
+-QtYNPHW0mQ,Patient education - post surgery,1,0.0,0.7142857143,0.5357142857,0.0,0.0,0.0,0.0
+wTLB9QOTw3w,Patient Education - waitlist,1,0.0,1.0,0.75,0.0,0.0,1.0,1.0
+kGlGGqoF5-o,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,0.0
+U8rCoDiRaxY,Promotional - introduce the hospital/ MD/ clinician story,1,1.0,1.0,1.0,1.0,0.0,1.0,1.0
+1hsP3HxFspI,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+_hf6ifp_aDs,Patient education - evaluation,1,0.0,0.7142857143,0.5357142857,1.0,1.0,1.0,1.0
+1PtxaxcPnGc,Patient education - surgery,1,0.0,0.4285714286,0.3214285714,0.0,0.0,0.0,0.0
+14m0iXpHVAU,Patient Education - waitlist,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+S3CegUhEd7Y,Patient education - evaluation,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+9p1Erx1aaTg,Patient education - surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,1.0
+XszJGQzTb40,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+UOe4tcUhbQI,Patient education - surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+ZCpSiSS0Yv4,Patient education - surgery,1,0.0,0.7142857143,0.5357142857,0.0,0.0,1.0,0.0
+tl7iYSl8HjE,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+4Zxvm3MSb8k,Patient education - surgery,1,0.0,0.8571428571,0.6428571429,1.0,1.0,1.0,1.0
+zrwWJL1iDug,Patient education - evaluation,1,0.0,0.8571428571,0.6428571429,0.0,0.0,1.0,1.0
+L9urG01PmmA,Patient education - surgery,1,1.0,1.0,1.0,0.0,1.0,1.0,1.0
+423GoR_79Xg,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,,,,
+ihUxhJGvnWM,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+iWSewFlU6o8,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,0.0
+pn7x1GLjyoE,Patient education - evaluation,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+xUV0eKlDJcY,Patient education - post surgery,1,0.0,0.5714285714,0.4285714286,0.0,0.0,1.0,0.0
+fPyS5ma_7rM,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,0.0
+QPj6e1aqiB0,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+aS3XEPPfNtU,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,0.0
+YZ6G_ubc7BQ,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+szMgN68kijg,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,0.0
+qkWLnyHua1g,Patient education - evaluation,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+30O9u8iC51g,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+fFb68ZuG4OY,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+-8wPY3vFR_A,Patient education - post surgery,1,0.0,0.7142857143,0.5357142857,1.0,1.0,1.0,1.0
+wGadLXepF8s,Patient education - post surgery,1,1.0,1.0,1.0,,,,
+LpiytTB4ZG4,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+jsLa9itfNFU,Patient education - evaluation,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+9WAD1YM5R14,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,0.0
+1hKkuOSe2vw,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,0.0
+Ra_OdIPXdqE,Patient education - post surgery,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+aKmcTOY4N0M,Patient education - post surgery,1,1.0,1.0,1.0,,,,
+Ke-PedBEhpk,Patient education - post surgery,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+EcBsjSBS_1Q,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+HJCRWBLEWAM,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,0.0
+98qvFKR8OmQ,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,0.0
+h6l3CB3boLA,Patient education - surgery,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+IkBMQ2QTmfc,Patient education - post surgery,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+MeSYFx7ends,Patient education - post surgery,1,1.0,1.0,1.0,1.0,0.0,1.0,0.0
+dVdKV9qW2wc,Patient education - post surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+LW8xpMrucOk,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+ABm8iW5eWC8,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+cGuxBtvBl3I,Patient education - evaluation,1,1.0,0.0,0.25,1.0,0.0,1.0,1.0
+zagQa-9fJpM,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+DQi4FlIiq-I,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,,,,
+MkKp-y5BJUQ,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,,,,
+3xBoVClIOXs,Patient education - surgery,1,0.0,0.1428571429,0.1071428571,1.0,1.0,1.0,1.0
+Hc80DpVlVYY,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+ePlYxTJ3w3Q,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+zjRDYdDlpiw,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+AumWr7lU0mM,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+S0NReOVUwOg,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+JUx30vdQXeE,Patient education - surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+RcyIgDT1eYk,Patient education - evaluation,1,0.0,0.4285714286,0.3214285714,0.0,1.0,1.0,1.0
+aDacxSZ5tZc,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+_hg0OdMXyvU,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+vAzY6Z3N_g8,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+4DhN2CpNWzY,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+krxCR7wt50Y,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+brt92Qj1EFc,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+d4AwqixONAQ,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+oFYX05sfmGk,Patient education - consideration,1,0.0,0.4285714286,0.3214285714,1.0,1.0,1.0,1.0
+Jxb8RVrgjQo,Patient education - surgery,1,0.0,0.2857142857,0.2142857143,0.0,1.0,1.0,1.0
+Ewq5GelNV1E,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+SvPxHFliDWU,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+qB2xDwqlXcg,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,0.0,1.0,1.0,1.0
+Tp8ulbGjexM,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+ezBg1vX0Ozg,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+t-SIRbrtODc,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+8JCO70bph6s,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+SW4AAakdQaw,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,1.0
+udOlD9ztx-o,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+iEOa6VM8zHg,Patient education - surgery,1,0.0,0.4285714286,0.3214285714,0.0,0.0,0.0,0.0
+oaLDD3Ggus4,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+ZXy747Diy88,Patient education - evaluation,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+WDqN_sMBccE,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+5kEquK1PFKc,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,,,,
+m0y4hLA8Zec,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+n7A2uQhrOB8,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+braFMh1nvuk,Patient education - post surgery,1,0.0,0.1428571429,0.1071428571,1.0,1.0,1.0,1.0
+znkUgQVIBH4,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+HySh85IZS5E,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+W8bezLf7V3w,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+hPaxCgWMlkU,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+7HChH-3NHQw,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,,,,
+7c0C1RmdsvU,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,,,,
+Mx6V-iaAB38,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+zRIEIE-sSn0,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Qu0HUsfzsmc,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+_ThKl9iS0T8,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+Cp59BCMVHHc,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+PT5cFR296-w,Patient education - surgery,1,0.0,0.2857142857,0.2142857143,0.0,0.0,1.0,1.0
+bmNYe2zVoLo,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+-OcOA2cE5w4,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+4ieT1N2B_Ww,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+6Xxx9qNjPwo,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,,,,
+03jZdOzvjSc,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,0.0,0.0
+U0UE68qHkGI,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+YydNvpjjijw,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+3YY_2TSC1kY,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Y0pu63ruzrA,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+NeqmyJ_TK2U,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+iP4kaR8wtE4,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+L_dCXo8a3Z0,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Y_bDvmxlFBk,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+PTPIEyI50Ko,Patient education - evaluation,1,0.0,0.1428571429,0.1071428571,1.0,1.0,1.0,1.0
+1Kjj5glCjO4,Patient education - surgery,1,0.0,0.1428571429,0.1071428571,,,,
+2zy9LV6ARSI,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,1.0,0.0,0.0,0.0
+AkxVxcwk89g,Patient Education - waitlist,1,0.0,0.5714285714,0.4285714286,1.0,1.0,1.0,1.0
+66Uv-ZwBY88,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+f4bW9exS6vY,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+X2LY1h8tDU8,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+nsimm-zLZcs,Patient Education - waitlist,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+shX5xqZSAjk,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+rTjgXZM8yN8,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+kVuEjXojqrA,Patient Education - waitlist,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+lWo1ZUKjKj4,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+COpe6DZjy8M,Patient Education - waitlist,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+vlkASwAkHaE,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+hxgPkmy6BN4,Patient education - post surgery,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+ShQNrFfEYYs,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,0.0
+q16CFwsDx1c,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+0H_xTEHRK0g,Patient education - surgery,1,0.0,0.5714285714,0.4285714286,0.0,0.0,1.0,0.0
+K-eWKuRYTqI,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+iFILua3E6Zg,Patient education - post surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+uKQ3BeBXV-I,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,1.0
+cTvjy-1Uzok,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+vj-8ikMXPPk,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+fvMYt_aX6iY,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+TPvySQ_2Zdw,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+zJ99dU_mGCE,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+SHdlRVRYKJw,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Yn8acPibhc8,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+SVym7iEvqgI,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+qgnb3QLd01A,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+C0z6CudidMU,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+Bow5eOa8Jcg,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+r4v-X9uT6nI,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+hsgQ_oZP_VM,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+mYTKDineB5k,Patient education - post surgery,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+igCTRbIFh0U,Patient education - surgery,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+4yq6Fb9Fk68,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,,,,
+Xvxu3D8bwtU,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+_81nEFqWdgA,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+tnj10J930i8,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+h3jfQGH9U0Y,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+rP05zGjuZu8,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,0.0,0.0
+ywCBvQrblGY,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+B5V1u1hw-So,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+Ns8SHmyVMwU,Patient Education - waitlist,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+PdMJ9HYxkck,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+n0aYj8fnqUw,Patient education - consideration,1,0.0,0.4285714286,0.3214285714,1.0,1.0,0.0,1.0
+-pSSzZZch8Y,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+VdO40cCjoQw,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+T-jRjQU_wN4,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+mks84XYGzWQ,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+12Ec8VFBBJU,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+1x16GljWewo,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+SxJhxrfxOd8,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+ggug7D_Pz3A,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+8C-exOYRY4Q,Patient Education - waitlist,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+Xsuvh6tCMUM,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+FX81RhxachU,Patient education - consideration,1,0.0,0.1428571429,0.1071428571,0.0,0.0,1.0,1.0
+ZruVB0R5sZ0,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+mFKvBeWsDzc,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+Hjnd67MKhy0,Patient education - evaluation,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,0.0
+wLCDCZ-jGyE,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+LVD_89gRUpA,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+h1yZnI6RboU,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+g7QWHcXk5r8,Patient education - evaluation,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+PPlFZ9m7sRs,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+VSpY0JcwsD8,Patient education - post surgery,1,1.0,0.0,0.25,1.0,0.0,1.0,1.0
+l--agdcsR0I,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+kIqpOtzogfg,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+8zo5F5CBAuw,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+KyhnIuouFeQ,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+5bEVFzJQNIQ,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+a8RDH7FhYJo,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+P5yuETMKLq0,Patient education - surgery,1,0.0,0.4285714286,0.3214285714,1.0,1.0,1.0,1.0
+X755mvCm3ms,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+9ul6iIbCPQI,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+1tRL-3tDG4M,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+xuuQdxq6cSM,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+Uqg0B3qQzOE,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+_QEyo00APpA,Patient education - post surgery,1,1.0,0.1428571429,0.3571428571,,,,
+Iiahn13BpYc,Patient education - evaluation,1,1.0,0.0,0.25,1.0,0.0,1.0,1.0
+hzJlNXJLxWc,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+MBKPrbzDPHQ,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+FaLTTq6LKWM,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+nakb7Jjuxwg,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+9mJExw9ARAA,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+QLdIEi7IGl8,Patient Education - waitlist,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+PsEu3F5PnBM,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+b9CMn7YFNxo,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+nI2c-d3skFw,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,0.0,1.0,1.0,1.0
+sxCSmVzMxZk,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+EDG2OaGYiso,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,,,,
+C9eH-xmTB8g,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+e_6-QGoeDDc,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+naHdNzp24n8,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,,,,
+PFrw54njj48,Patient Education - waitlist,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+t5QjkBZj1co,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+zMB5oUCpt5Y,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+-gOE6NWC-r0,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,0.0,1.0,1.0,1.0
+MqzkuanJjRw,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+CnJRnAiMkZY,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+cBbwWg5kqFM,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+VrIxRfWDOm8,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+L93yQnr7u3c,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+YQEAwTFytRo,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+3F3KdExu3Is,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+zhhBS3gO6qs,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+fPRbE9IShhI,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+xptGB2ITGr0,Patient education - consideration,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+cComQ8cbixY,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,0.0,1.0,1.0,1.0
+Ov7xYrPNd1U,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+o72e6TBzu8E,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+Zag8OJlZurM,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+BiGv2f9L5Fs,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+lqNqJyOtEr0,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+0DNUVlGgTIo,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,0.0,1.0
+ltlbGQPq89k,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+fIzS4dNgfkM,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+tXSVha4Ou2E,Patient education - evaluation,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+LbUCLSRKiS4,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+L12Pkx92_jI,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+uK3BVkDWL2k,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+wXcaKOrlgJY,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,,,,
+VX1n7tY6F2E,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+ssy2HTyhoYg,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+vTbyIYG2DmM,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+noBv58QoAJo,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+bzzqfoA9WU4,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+t5NFb4QyMr0,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+cLEbL7JbVQI,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+Cw5L0dNvzOU,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+vU5RpLjZF8w,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+Gl1fRdQ4Xg0,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+kUBQZZS6Bfk,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+2ZhrOUAH-Ms,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+edZkmdG0IAQ,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+tArFtF4N65g,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+COgIvTpH8gA,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+RpiwRRDU8Mg,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+ceUW5aIh4b0,Patient education - post surgery,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+_DeZLJVuWwg,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+uGcLOfUlzfc,Patient education - surgery,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+iynOzdIx_Xc,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+2qaZf1CNS9Q,Patient education - surgery,1,0.0,0.1428571429,0.1071428571,,,,
+mioatMDYVew,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+n8skoBVca38,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+u1fybCe0-js,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+zH5UrjPyfno,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+q0PRVH_f-ok,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+4nRfuf13vS4,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+dZYwuIwcIZE,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+qe8I0CZD7eM,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,,,,
+-_y1b3X80EA,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+3RND7mOLvsA,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,,,,
+S400x_NWsHw,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+PxALYSzud2s,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+TGlbtCyHaps,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+oXBT0uIdjU4,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+nNhIivlMhFI,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+JgNVhHRw3tc,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+dfTkvCaznwI,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+jSMEktkyAFs,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+XozS9XFplVw,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+5XfjuyMHbKE,Patient education - surgery,1,1.0,0.0,0.25,,,,
+BanIGqOoEi0,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+Sjb_4xlY5qc,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,1.0
+jTGtmTY0KPs,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+_ZNlepuqh7I,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+ynTQcAweNNA,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+LsYFZiJM94E,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+6-0CvKbDtPs,Patient education - surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+PBzMMGvy3ME,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+woqZSRRM5i0,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+ZtWIXHzYfZ0,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+Q3NIDPxv1FE,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+esZMkvNBgsk,Patient education - surgery,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+07wh0brpo4Y,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+tiy5_U66S7s,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+cXU93UolNpc,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+S8EUEQSxB7o,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+UOjc-2v51rY,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+dCTzM-9_-nI,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+mDbMxIybx84,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+rHaisEsuu00,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+T0laUsimLXY,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+XOK6ODKS3jQ,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+4w6__b_TV4Y,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+wRWNDwlieTA,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,0.0,1.0,1.0,1.0
+joQGSOx0sME,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+iFmtPfMNol4,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+0Zp7uPIyllo,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Y0ACcA3U6c8,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+3e6Ok8BFqYo,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+0GyVL3Jafks,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+TyYdJ6nrGWw,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+j4HEaSFrjT4,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+wtzLU1IziFg,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+_GSS0ymIBLk,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+RzVItPnUGg0,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+qRw4d4i1ZGU,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,1.0
+ANkwvm5FTM4,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+EIItnkDehow,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+gutRhgx8yQo,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+IZY8JJVtZZI,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+05G3hfCd8O0,Patient education - post surgery,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+d0xbZnf98JA,Patient education - evaluation,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+o46eZI0j_w4,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+OIabcrqiNC0,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+DZcIPQH3KGw,Patient education - evaluation,1,0.0,0.2857142857,0.2142857143,0.0,0.0,1.0,1.0
+kBIxxUPiGxE,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+IJW1nCE7-t0,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+tLR2AE8UPcw,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+mUnmuB2X7pI,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,0.0,1.0
+D1kDysDeGNc,Promotional - introduce the hospital/ MD/ clinician story,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+LSlzbi2jOG8,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+sHNM9CRbq5s,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+0_gFDk3K3J8,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+VamIKPgN88Y,Patient education - post surgery,1,0.0,0.4285714286,0.3214285714,1.0,1.0,1.0,1.0
+J-xE3C7KSpY,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,,,,
+PybtdiEjJHE,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+Q4vdkCf7Xwg,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+k2MCw4r2cBk,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,0.0,0.0,1.0,1.0
+KtnenSnI-TA,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+hIue8HkdWQM,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+hxTxROuUj4g,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,,,,
+dm5IRDCAr0Q,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+xeRS9N1aV84,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+iWDH0psBCJo,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+kmxmYldNeyI,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+cuKPRygRgDQ,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+Hni-1dESzQc,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+YCQD5T_uOv0,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+lcobppiMAX4,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,,,,
+TOSxmXVgyPs,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+VdXEUCrhN9g,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+rPC2qiSags0,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+mWiTgXHwuJI,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+akO5xf0YWnw,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+EgVeZX8rZdc,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+FbCumsphfIs,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Eydrd2P_iGY,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+gDICuN4uZdE,Patient education - surgery,1,1.0,0.0,0.25,1.0,0.0,1.0,1.0
+TQe6fG94CdM,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+5M9tz38lrvQ,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+mTr_VCwUK8s,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+iSdhV5aMGd4,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+rLxTozspBxk,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+QXOLqAlW1SM,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+EyErv_J7goQ,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+xok9lDMkylg,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+B4nUAUbPEE8,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,,,,
+toB6n7nbdAk,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,,,,
+S8BCExUiu6w,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+3iGLfS5PRyY,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+MOdmXje8BIc,Patient education - post surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+Ig_M3CQMcRM,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+tNPrEoLgbNM,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+a3WGt0il-Jo,Promotional - introduce the hospital/ MD/ clinician story,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+AT7I5CFyKac,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+XSn6Cra_QAs,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+yxzggpJuxfY,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+9ARbCXTd8Xk,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+m3MebGrtoj0,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+VVR60zcS9L4,Patient education - consideration,1,0.0,0.1428571429,0.1071428571,1.0,1.0,1.0,1.0
+S1vxtWLZW40,Patient education - evaluation,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+evRqX1EdSnM,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+vjih9pfBM6c,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,,,,
+pM5OClHVfyU,Patient education - consideration,1,0.0,0.1428571429,0.1071428571,0.0,1.0,1.0,1.0
+pIarXrl9o_I,Patient education - surgery,1,0.0,0.0,0.0,,,,
+O9NsmoRrcbw,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,0.0,1.0,1.0,1.0
+Hxu-Pc5GStA,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,,,,
+HTOrcXnOvQM,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+WI1vbFb4q8Y,Patient education - consideration,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+IlhqEf8EOCg,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+j2r44Plhj-Y,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+VF2pOnkAiZI,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+gOGDlasUm0Q,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+0DfihOFKmzc,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+1N6kqKjpGX4,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+0DQZxvbD-Es,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+DgoVKIkCKEQ,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+14IPpNZKpGw,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,0.0,1.0,1.0,1.0
+qRGb-KBK4VI,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,0.0,1.0,1.0,1.0
+38H0DS1tEow,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+G44-ul_xF4Y,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+ugc5k7z2Ga0,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+IgvyQDh83F8,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+3A5st5NlSb8,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+VbWzuBZRlQw,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+fIx85pw7TH8,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+e6SRF_2D2ns,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,1.0,1.0,1.0,1.0
+guV2fPWwYoA,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+eIBcF1cbMyc,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+5zVO8qosRu0,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+PYpGIl443b4,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+GuC9g07ibOA,Promotional - introduce the hospital/ MD/ clinician story,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+EK7Fq2gkFrQ,Patient education - consideration,1,0.0,0.1428571429,0.1071428571,0.0,0.0,1.0,1.0
+rp5eI2qP-kw,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+cUQXqZObNzM,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,0.0,0.0,1.0,1.0
+G8xkRNuzVWs,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+RgXVbmUZmHk,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+a2kpXjTNMBE,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+KPDmx9BwEAs,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+2QKwDGlpVBo,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+t9CGEdbqigw,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+EBJrZIi6tsU,Patient education - surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+vJhUXyBFaUI,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+8hiQql7YoZk,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+gusncb4G2Hk,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+8Loq9oE72TY,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,0.0,1.0
+OVk4YXwJp98,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+hvUoPfUY5ao,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+za78Uqroios,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+UloLVGxzNt4,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+z1nCUmWHvsU,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+0P6_5xqg2Wg,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+hcxOtu0Vuyk,Patient education - consideration,1,0.0,0.0,0.0,1.0,1.0,1.0,1.0
+AInty1Lqt38,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+RXk8Yh_Fecc,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+DcgXXxLHyCE,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+k2yLsjspxN4,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+BsFn6tNQEo4,Patient Education - waitlist,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+OQ9rpMXsZrU,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,,,,
+18bGEw0uyAU,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+52eMwhf8UfI,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,1.0
+qGDjOgQ2FrY,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+43PWKVRHdHU,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+TCCNNatgIMM,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+hhI4PqgkJp0,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,,,,
+HTGtbOJwpvE,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+Xv3NX1p5Oa8,Patient education - surgery,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+G5S3DQiqjGo,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+HKTeAOiByLw,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+cibyGjzyYNk,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+H5aM9a60eLM,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+VrwVGMAD48o,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+E-wOxOakE8A,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+_uYUiRBrAMk,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+_kEoo15YIQk,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+DehY-Be783M,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+vVNW1_QmgE0,Patient education - consideration,1,0.0,0.2857142857,0.2142857143,0.0,0.0,1.0,1.0
+PdX4VA2dNMs,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+gSu_0TWRKTM,Patient education - post surgery,1,1.0,0.1428571429,0.3571428571,1.0,0.0,1.0,1.0
+mZPu52zlrpI,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+2b5H5dfDkpQ,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+VCHO9B1TtfY,Patient Education - waitlist,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+mrzhpcauJ4s,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+L0ES-Z0Tjr0,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+8eAgLpIHcrc,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,0.0,1.0,1.0,1.0
+-UfkH83KeC8,Promotional - introduce the hospital/ MD/ clinician story,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+zXppZFV1fTg,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+eevYyHrXEsk,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+HBeaaPlf3RA,Patient Education - waitlist,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,1.0
+BG6rRen2Mi0,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+lnRLsPNrEdw,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Oh3S03t9VZ4,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+4Hch-iQuCgw,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+TrOIC3_T-U8,Patient education - surgery,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+XBE8AkDCUoY,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+g25kuBQhxlY,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+cdVvu9eIAeo,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+57E0mZvygpc,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+OxxUAx0Xd6o,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+axlPSEK0Xo8,Patient education - surgery,1,0.0,0.4285714286,0.3214285714,,,,
+jYUj8ZVNO3A,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+NGfWLmppEsQ,Patient education - consideration,1,0.0,0.1428571429,0.1071428571,1.0,1.0,1.0,1.0
+xdOBwXBxffI,Patient education - evaluation,1,0.0,0.1428571429,0.1071428571,0.0,0.0,1.0,1.0
+n2flQv5UZVs,Patient education - post surgery,1,1.0,0.0,0.25,1.0,1.0,1.0,1.0
+TrlHEjjQnzc,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+l0fENCO74KA,Patient education - evaluation,1,0.0,0.4285714286,0.3214285714,0.0,1.0,1.0,1.0
+mSeblARXJ7U,Patient education - evaluation,1,0.0,0.2857142857,0.2142857143,0.0,1.0,1.0,1.0
+HHEkAReLt0A,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+gOuSLw0yt5Y,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+y3UgmMntTk8,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+mbkuWmBI5ik,Patient education - consideration,1,1.0,0.0,0.25,0.0,1.0,1.0,1.0
+hmtG0ncFM2o,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,0.0,1.0,1.0,1.0
+xJLsrfTAh04,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+q3EtUcJI6nI,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+YTVv5WpB0Jw,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+KLWMelePHsk,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+-y6JiLg201w,Patient education - surgery,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+ojpVFlkMUnA,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+L-7NqjKqqb8,Patient education - surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+SVO_Ud-glMU,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,0.0,1.0,1.0
+3ihszthnayg,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+AD2RtJPAhIU,Patient education - consideration,1,1.0,0.7142857143,0.7857142857,1.0,1.0,1.0,1.0
+LcBaW2csTjo,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+iB4hAHyAByw,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+0F0LNR5OXwo,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+fquiIxZgk4s,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Dj1SzImT_yI,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,0.0,1.0,1.0,1.0
+Uzh2zyf7ilk,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,0.0,1.0,1.0,1.0
+XHwfo2fVyWI,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+x8p65U7Kisc,Patient education - post surgery,1,1.0,0.7142857143,0.7857142857,1.0,0.0,1.0,1.0
+98pNrNp6fOE,Patient education - consideration,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+qLhKfH6om84,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+wtlNapcs0j0,Patient education - evaluation,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+onw0ie_Z4S4,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+NV5Lh1QsoQE,Patient education - surgery,1,0.0,0.1428571429,0.1071428571,1.0,1.0,1.0,1.0
+fLjaSApoDac,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,0.0,1.0,1.0
+leTF-FRI434,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+L2ygtcDElwY,Patient education - surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+T-qbU2zTxnY,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+XFWAmyW7Tis,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+JIXkf_i3kG0,Patient education - post surgery,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+LwRaOcBxkpc,Patient education - post surgery,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+lfRIozS_h9E,Patient education - consideration,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+w79YUSOhPWI,Patient education - consideration,1,1.0,0.8571428571,0.8928571429,1.0,1.0,1.0,1.0
+CNNDf8mfm5U,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+LhcB_CNrDAs,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+fol7E4bQFMQ,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+xSwfR3UYZ4E,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,0.0,1.0,1.0
+WyAFVjTrDlA,Patient Education - waitlist,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
+zoCLkLJHG1I,Patient Education - waitlist,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+W5G1EQagZGg,Patient education - post surgery,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+MmOc_I2Jyvk,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+aKWHgwz9dWo,Patient education - post surgery,1,1.0,0.5714285714,0.6785714286,,,,
+V7UfP6zZ-EA,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+v0dydIi42hY,Patient education - consideration,1,1.0,0.4285714286,0.5714285714,1.0,1.0,1.0,1.0
+GYW_SJI7ZM8,Patient education - consideration,1,1.0,0.2857142857,0.4642857143,1.0,0.0,1.0,1.0
+u-oO5artghw,Patient education - evaluation,1,1.0,0.5714285714,0.6785714286,1.0,1.0,1.0,1.0
+LvR1RxAeb5E,Patient education - evaluation,1,1.0,0.2857142857,0.4642857143,1.0,1.0,1.0,1.0
+Tdb8Bu9NiA4,Patient education - evaluation,1,1.0,0.1428571429,0.3571428571,1.0,1.0,1.0,1.0
