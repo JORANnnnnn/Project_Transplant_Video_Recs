@@ -1,0 +1,65 @@
+{
+  "model_name": "SVM with Feature Selection",
+  "problem_type": "binary_classification",
+  "threshold": 0.8,
+  "training_date": "2025-12-07 16:02:05",
+  "n_features": 31,
+  "n_selected_features": 15,
+  "selected_features": [
+    "meta_description_unique_words",
+    "meta_like_count",
+    "meta_comment_count",
+    "meta_subscriber_count",
+    "average_word_length",
+    "rare_term_ratio_unique",
+    "symptom_ratio",
+    "medication_ratio",
+    "anatomy_ratio",
+    "location_ratio",
+    "other_ratio",
+    "syntax_tree_depth",
+    "subordinate_clause_density",
+    "average_dependency_distance",
+    "pronoun_frequency"
+  ],
+  "n_train_samples": 133,
+  "n_test_samples": 49,
+  "best_parameters": {
+    "classification__C": 0.5,
+    "classification__class_weight": null,
+    "classification__coef0": 0.0,
+    "classification__degree": 1,
+    "classification__gamma": 1,
+    "classification__kernel": "sigmoid",
+    "classification__shrinking": true,
+    "feature_selection__k": 15
+  },
+  "best_cv_score": 0.6393162393162394,
+  "svm_configuration": {
+    "kernel": "sigmoid",
+    "C": 0.5,
+    "gamma": "1",
+    "degree": null,
+    "coef0": 0.0,
+    "class_weight": null,
+    "shrinking": true
+  },
+  "metrics": {
+    "train_accuracy": 0.48872180451127817,
+    "test_accuracy": 0.40816326530612246,
+    "train_precision": 0.4851381465712473,
+    "test_precision": 0.4125364431486881,
+    "train_recall": 0.48872180451127817,
+    "test_recall": 0.40816326530612246,
+    "train_f1": 0.4868268231554496,
+    "test_f1": 0.41018923615659353,
+    "overfitting_gap": 0.08055853920515571,
+    "train_auc": 0.5341880341880342,
+    "test_auc": 0.6724137931034482
+  },
+  "cv_metrics": {
+    "train_cv_score": 0.5415799682595661,
+    "test_cv_score": 0.6393162393162394,
+    "cv_overfitting_gap": -0.09773627105667326
+  }
+}

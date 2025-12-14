@@ -1,0 +1,40 @@
+{
+  "model_name": "Logistic Regression with Feature Selection",
+  "problem_type": "binary_classification",
+  "threshold": 0.8,
+  "training_date": "2025-12-06 18:19:24",
+  "n_features": 31,
+  "n_selected_features": 10,
+  "selected_features": [
+    "meta_comment_count",
+    "meta_subscriber_count",
+    "meta_sentiment",
+    "average_word_length",
+    "symptom_ratio",
+    "medication_ratio",
+    "other_ratio",
+    "syntax_tree_depth",
+    "subordinate_clause_density",
+    "average_dependency_distance"
+  ],
+  "n_train_samples": 140,
+  "n_test_samples": 42,
+  "best_parameters": {
+    "classification__C": 100,
+    "classification__penalty": "l2",
+    "feature_selection__k": 10
+  },
+  "best_cv_score": 0.6357142857142858,
+  "metrics": {
+    "train_accuracy": 0.6714285714285714,
+    "test_accuracy": 0.5238095238095238,
+    "train_precision": 0.6620851457341508,
+    "test_precision": 0.5353535353535354,
+    "train_recall": 0.6714285714285714,
+    "test_recall": 0.5238095238095238,
+    "train_f1": 0.6645128607379808,
+    "test_f1": 0.48148148148148145,
+    "train_auc": 0.7329808327825512,
+    "test_auc": 0.5963718820861679
+  }
+}
