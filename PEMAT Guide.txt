@@ -1,0 +1,405 @@
+The Patient Education Materials Assessment Tool (PEMAT) and User’s Guide
+
+Domain: Understandability
+
+Topic: Content
+Item 1: The material makes its purpose completely evident (P and A/V)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+Printable materials: The material uses a title or upfront text that clearly tells you at a glance what the material is about. If the material uses a generic statement (e.g., this material will help you be informed about your condition) instead of a statement(s) that reflects the specific purpose of the material, you should choose "Disagree."
+
+Audiovisual materials: The A/V material's title makes it clear what the material is about, or at the beginning of the material the narrator or the displayed text makes it clear what the material is about.
+
+Examples
+Material Titles
+
+CHOOSE "AGREE"—Purpose is completely evident from title: What will happen during your mammogram
+CHOOSE "DISAGREE"—Purpose is not completely evident from title: Mammograms and You
+
+Statements in a Printable or Audiovisual Material
+
+These statements may be text in a printable material or on a screen or slide in an audiovisual material, or they can be stated orally in an audiovisual material.
+
+CHOOSE "AGREE"—Purpose is completely evident from a statement (written or oral) at the beginning of a material: This material will help you understand what prediabetes is and how you can manage it with diet and exercise.
+CHOOSE "DISAGREE"—Purpose is not completely evident from a statement (written or oral) at the beginning of a material: This material will help you stay healthy.
+
+Item 2: The material does not include information or content that distracts from its purpose (P)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+The material's content is focused and relevant to its purpose, and no information distracts or detracts from the material's purpose. Only essential information is included; extra information is left out so as not to overwhelm the audience with too much or unnecessary content.
+
+Examples
+The following are examples of potentially distracting information or content:
+
+Excessive detail about the equipment used for a procedure that distracts from the material's purpose.
+Excessive detail about other procedures or treatments that are not related to the material's purpose.
+Extensive description of the background or epidemiology of a disease or chronic condition that ultimately distracts from the material's purpose.
+
+Topic: Word Choice & Style
+Item 3: The material uses common, everyday language (P and A/V)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+The material should use common, everyday language that would be easy to understand for most consumers or patients nearly all of the time. Jargon (i.e., technical language) should not be used.
+
+If the material includes abbreviations or acronyms, they should be spelled out or defined the first time they are used. If the material uses more than a few abbreviations or acronyms, even if they are spelled out, the material will be difficult to understand and you should disagree with this item. However, when spelling out an acronym is not helpful, such as certain medical tests or imaging technologies like CT or CAT scan (computed tomography or computer axial tomography), you should not disagree solely for use of this type of acronym.
+
+Examples
+The following are examples of common, everyday language:
+
+Runny nose (not excess mucus).
+Pain killer (not analgesic).
+Doctor (not physician).
+Send you to another doctor (not referral).
+Enough (not sufficient).
+Swelling (not inflammation).
+Helpful (not beneficial).
+Use (not utilize).
+Come back (not recur)
+Make worse (not exacerbate)
+Feverish (not febrile).
+Make easier (not facilitate).
+Watch (not observe).
+Hole (not perforation).
+Deadly (not terminal).
+Item 4: Medical terms are used only to familiarize audience with the terms. When used, medical terms are defined (P and A/V)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+The material should not use medical terms except to educate the audience about the medical terms. When medical terms are used they are explained. The explanation of a medical term should also be easy to understand. Hypertext definitions (text displayed on a computer or a Web site with references via hyperlinks to other text that the reader can access by a mouse click or by touching the screen) are not adequate as the sole means of providing explanations. Consumers may be confused by, and unable to follow, hyperlinks. It is acceptable, however, if hypertext or hyperlinks are simply one technique used among others to make a term understandable.
+
+Even when there are not obvious plain language substitutes for a medical term, a material that uses medical terms will not be easily understood. You should disagree with this item if the material uses medical terms other than to introduce them.
+
+Examples
+Medical Terms
+Medical procedures (e.g., colonoscopy, endoscopy, mammogram).
+Medical devices (e.g., nebulizer, glucometer).
+Drug classes (e.g., benzodiazepines, bronchodilators).
+Conditions (e.g., hypertension, atherosclerosis, myocardial infarction).
+CHOOSE "AGREE"
+
+You can have high blood pressure (hypertension) for years without any symptoms. Uncontrolled high blood pressure increases your chances of serious health problems, including heart attack and stroke.
+
+CHOOSE "AGREE"
+
+A heart attack occurs when blood flow to a part of your heart is blocked for a long time and part of the heart muscle is damaged or dies. The medical term for this is myocardial infarction.
+
+Item 5: The material uses the active voice (P and A/V)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+The material should almost always use the active voice. If the material uses the passive voice in a single instance, but overall uses active voice you should agree with this item.
+
+The active voice is preferable to the passive voice because it is easier to understand. The active voice is when the subject performs the action it expresses (e.g., the nurse will give you the medication). The passive voice is when the subject is acted upon by the verb (e.g., you will be given the medication by the nurse). Remember, voice (i.e., active and passive) can have different tenses (e.g., past, present, future) and forms (i.e., indicative, imperative and subjunctive).
+
+Examples
+CHOOSE "AGREE"—Active voice: Take your medicine with a full glass of water.
+CHOOSE "DISAGREE"—Passive voice: This medicine should be taken with a full glass of water.
+
+CHOOSE "AGREE"—Active voice: If you see redness, see your health care provider.
+CHOOSE "DISAGREE"—Passive voice: If redness is observed, the patient should see a health care provider.
+
+CHOOSE "AGREE"—Active voice: The patient visits the heart specialist after a heart attack.
+CHOOSE "DISAGREE"—Passive voice: The patient is seen by the heart specialist after a heart attack.
+
+Topic: Use of Numbers
+Item 6: Numbers appearing in the material are clear and easy to understand (P)
+Ratings: Disagree = 0       Agree = 1    No numbers = N/A
+
+Explanation
+As a general rule, a material should use numbers only as needed. When numbers are used, they should be clear and easy to understand. There is no hard and fast rule about what to avoid (e.g., fractions, percentages), but in general, expressing probabilities as frequencies (e.g., 1 out of 10,000) instead of percentages (e.g., 0.01%) is easier to understand.
+
+Similarly, it may be helpful to explain the numbers qualitatively alongside the number (e.g., very few people—1 out of 10,000 people who have this condition—will experience this symptom), but they should generally not be used in place of numbers.
+
+Note: Time and dates should not be considered numbers for this item.
+
+Not Applicable
+Choose N/A if the material has no numbers.
+
+Examples
+CHOOSE "AGREE"—Easy to understand: There’s a very small chance that you could have a heart attack because you take this medicine. Out of 10,000 people taking this medicine, no more than 3 of them will have a heart attack.
+CHOOSE "DISAGREE"—Hard to understand: The risk of having a heart attack because you take this medicine is 0.029%.
+
+CHOOSE "AGREE"—Easy to understand: Take 1 pill in the morning and 1 pill at night.
+CHOOSE "DISAGREE"—Hard to understand: Take twice daily.
+
+Item 7: The material does not expect the user to perform calculations (P)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+A calculation is when the material asks the user to add, subtract, multiply or divide, or perform any other mathematical operation. Do not consider the following calculations: simple counting (e.g., count out 2 pills, hold your breath by counting to 10), simple references to time (e.g., wait 24 hours, brush your teeth for 2 minutes), or calendar-based information (e.g., in 1 week).
+
+Examples
+CHOOSE "AGREE"—The material does not expect the user to perform a calculation to determine his/her body mass index (BMI).
+
+BMI table that includes explanation of how to use the chart. A BMI of 27 is circle, along with corresponding height of 63 inches and weight of 152 pounds.
+
+Taken from National Heart, Lung, and Blood Institute, Body Mass Index Table 1
+http://www.nhlbi.nih.gov/guidelines/obesity/bmi_tbl.htm
+
+CHOOSE "DISAGREE"—The material expects the user to perform a calculation to determine his/her BMI.
+
+To calculate your body mass index, multiply your weight by 703, and divide by the square of your height in inches.
+Call your doctor if your weight increases 2 pounds over a 2-day period or 5 pounds in 1 week.
+Add up the calories in a meal.
+
+Topic: Organization
+Item 8: The material breaks or "chunks" information into short sections (P and A/V)
+Ratings: Disagree = 0       Agree = 1    Very short material = N/A
+
+Not Applicable
+Choose N/A if the material meets the definition of a very short material:
+
+Printable (P): A very short material is defined as a material with two or fewer paragraphs and no more than 1 page in length.
+Audiovisual (A/V): A very short material is defined as a video or multimedia presentation that is under 1 minute or a multimedia material that has 6 or fewer slides or screenshots.
+Explanation
+The material should break up information into sections or "chunks" of information that are relatively short to prevent information overload and to make the content easier to understand. Similarly, longer lists need to be broken into smaller chunks as well.
+
+The audiovisual material should also be broken into "chunks," which can be accomplished with the narrator introducing a new section (e.g., now we're going to talk about X), or text or a screenshot to break up the information presented.
+
+Examples
+CHOOSE "AGREE" —
+Chunking	CHOOSE "DISAGREE" —
+No chunking
+Understanding High Blood Sugar
+
+Where blood sugar comes from...
+Blood sugar comes from the food you eat and drink.
+
+Why insulin is important...
+Insulin turns blood sugar into energy—so you have more pep and don't feel tired all the time.
+
+Why your blood sugar goes high...
+When you don't have enough insulin, the sugar stays in your blood. Then your blood sugar goes higher than it should.
+
+Understanding Diabetes
+
+Your body needs sugar for energy. It gets sugar from the food you eat and drink. The insulin your body makes helps turn blood sugar into energy. When your body does not make enough insulin, it cannot get energy from the sugar. Without insulin, the sugar stays in your blood. Then your blood sugar goes too high and you feel tired.
+
+Taken from Pfizer, Principles for Clear Health Communication. 2nd Edition.
+http://aspiruslibrary.org/literacy/PfizerPrinciples.pdf External Link Disclaimer. Used with permission.
+
+ 
+
+CHOOSE "AGREE" —
+List broken into "chunks"	CHOOSE "DISAGREE" —
+Long list
+Possible migraine triggers:
+
+Certain foods eaten 24 hours before the attack:
+Aged cheese (such as cheddar, provolone).
+Chocolate.
+Citrus fruits (such as oranges, grapefruit).
+Nuts.
+Monosodium glutamate (MSG is often added to Asian food and some packaged foods).
+Nitrites (found in preserved meats such as bacon, ham, and lunch meats).
+Certain beverages drunk 24 hours before the attack:
+Alcohol (especially red wine).
+Drinks with caffeine (such as coffee, tea, cola).
+Changes in daily activities:
+Stress.
+Skipping meals.
+Too much/too little sleep.
+Travel to different altitudes.
+Hormonal changes:
+Menstruation.
+Pregnancy.
+Menopause.
+Possible migraine triggers:
+
+Aged cheese (such as cheddar, provolone).
+Chocolate.
+Citrus fruits (such as oranges, grapefruit).
+Alcohol (especially red wine).
+Caffeine: coffee, tea, cola.
+Nuts.
+Monosodium glutamate (MSG is often added to Asian food and some packaged foods).
+Nitrites (found in preserved meats such as bacon, ham, and lunch meats).
+Stress.
+Skipping meals.
+Too much/too little sleep.
+Travel to different altitudes.
+Menstruation.
+Pregnancy.
+Menopause.
+Taken from Pfizer, Principles for Clear Health Communication. 2nd Edition.
+http://aspiruslibrary.org/literacy/PfizerPrinciples.pdf External Link Disclaimer. Used with permission.
+
+Item 9: The material's sections have informative headers (P and A/V)
+Ratings: Disagree = 0       Agree = 1    Very short material = N/A
+
+Not Applicable
+Choose N/A if the material meets the definition of a very short material:
+
+Printable (P): A very short material is defined as a material with two or fewer paragraphs and no more than 1 page in length.
+Audiovisual (A/V): A very short material is defined as a video or multimedia presentation that is under 1 minute or a multimedia material that has 6 or fewer slides or screenshots.
+Explanation
+Headings should be specific and let the user know what to expect in that section.
+
+Examples
+CHOOSE "AGREE"—Informative header: Why you should wear your seatbelt
+CHOOSE "DISAGREE"—Poor header: Seatbelts
+
+CHOOSE "AGREE"—Informative header: Medicines for your diabetes
+CHOOSE "DISAGREE"—Poor header: Medicines
+
+CHOOSE "AGREE"—Informative header: Safe cooking temperatures
+CHOOSE "DISAGREE"—Poor header: Temperatures
+
+Item 10: The material presents information in a logical sequence (P and A/V)
+Ratings: Disagree = 0       Agree = 1
+
+Explanation
+The information in a material should be presented in an order that makes sense to the user. The information should build in a natural way. A logical sequence is not necessarily chronological, nor does it mean that you have to start with a background section. Main messages or most important ideas should be at the beginning of sections or lists because users tend to pay more attention to items mentioned first.
+
+Item 11: The material provides a summary (P and A/V)
+Ratings: Disagree = 0       Agree = 1    Very short material = N/A
+
+Not Applicable
+Choose N/A if the material meets the definition of a very short material:
+
+Printable (P): A very short material is defined as a material with two or fewer paragraphs and no more than 1 page in length.
+Audiovisual (A/V): A very short material is defined as a video or multimedia presentation that is under 1 minute or a multimedia material that has 6 or fewer slides or 6 screenshots.
+Explanation
+A material should have a summary of the key points or review the key points at the end of the material, either in writing or orally. The summary usually comes at the end of the material, but for a printable material a summary (e.g., summary box) at the beginning is fine. A checklist of key points (or steps) can also be considered a summary.
+
+Examples
+The following are good examples of materials providing summaries, whereas a bad material would not provide a summary.
+
+CHOOSE "AGREE"—Multimedia material with a summary
+
+Four pictures depicting: 1. Eat a healthy diet rich in fruits and vegetables; 2. Get regular physical activity; 3. Drink water instead of sugar-sweetened beverages; and 4. Balance calories consumed with colories used.
+
+Taken from CDC-TV video, National Center for Chronic Disease Prevention and Health Promotion, Finding Balance.
+http://www.cdc.gov/CDCTV/findingbalance/
+
+CHOOSE "AGREE"—Printable material with a summary
+
+In summary: 
+
+Learn the heart attack warning signs "by heart." 
+Call 9-1-1 within five minutes of the start of symptoms. Talk with family and friends about the warning signs and the need to call 9-1-1 quickly. 
+Write out a heart attack survival plan and keep copies handy. Be sure to tell those close to you where to find a copy. If necessary, arrange in advance to have someone care for your children or other dependents in an emergency.
+Taken from NIH, The Heart Truth® for Women: If You Have Heart Disease, July 2006.
+http://www.nhlbi.nih.gov/educational/hearttruth/downloads/pdf/factsheet-heartdisease.pdf 
+
+Topic: Layout and Design
+Item 12: The material uses visual cues (e.g., arrows, boxes, bullets, bold, larger font, highlighting) to draw attention to key points (P and A/V)
+Ratings: Disagree = 0       Agree = 1    Video = N/A
+
+Not Applicable
+Choose N/A if the material is a video. Rate other audiovisual materials.
+
+Explanation
+Visual cues (e.g., arrows, boxes, bullets, bold, larger font, highlighting) help draw the user’s attention to key points in a material. Visual cues should only be used for key points. If a material overuses visual cues (i.e., uses them indiscriminately), choose "Disagree."
+
+Examples
+The following are examples of visual cues.
+
+Arrows
+
+Photo of landscape worker with caption, 'Always wear a hard hat at the job site.' For emphasis, a large arrow is pointing to the hard hat.
+
+Taken from CDC, Simply Put: A Guide for Creating Easy-To-Understand Materials.
+http://www.cdc.gov/healthliteracy/pdf/simply_put.pdf
+
+Boxes
+
+Text box that says 'Remember--only a healthcare provide can read your TB skin test results the right way.'
+
+Taken from CDC, What You Need To Know About the TB Skin Test, 2005.
+http://www.cdc.gov/tb/publications/pamphlets/TB_skin_test.pdf
+
+Text box that says: 'Minutes Matter. Call 9-1-1. Lists 3 bullets: 1. If you think you might be having a heart attack (even if you're not sure), call 9-1-1 immediately. Don't wait. 2. Quick treatment can save your life--when in doubt, check it out. 3. Remember, the first minutes matter when you are having a heart attack.'
+
+From NIH, Heart Attack. Know the Symptoms. Take Action. Call 911. December 2011.
+http://www.nhlbi.nih.gov/health/public/heart/mi/heart_attack_fs_en.pdf
+
+Bullets With Bold Type
+
+Bullet list with bold text about healthy eating.
+
+From 4 Steps to Control Your Diabetes for Life. National Diabetes Education Plan.
+http://ndep.nih.gov/media/NDEP67_4Steps_4c_508.pdf 
+
+Item 13: Text on the screen is easy to read (A/V)
+Ratings: Disagree = 0       Agree = 1    No text or all text is narrated = N/A
+
+Not Applicable
+Choose N/A if the material has no text or all of the text is narrated.
+
+Explanation
+Audiovisual materials that are overcrowded with words or have text that flashes briefly on the screen are difficult to read and understand. You should choose "Agree" if the text that appears on the screen is sparse and the words stay on the screen long enough for a slow reader to read them.
+
+This item is not applicable (N/A) if no text appears in the material or a narrator reads all of the text out loud, because the material is not relying on the viewer to read the text.
+
+Item 14: The material allows the user to hear the words clearly (e.g., not too fast, not garbled) (A/V)
+Ratings: Disagree = 0       Agree = 1    No narration = N/A
+
+Not Applicable
+Choose N/A if the material has no narration.
+
+Explanation
+An audiovisual material, whether a video or a multimedia material with narration, should allow the viewer to hear the words clearly. The narrator or voiceover should not be speaking too fast nor should it be garbled or hard to understand in any other way.
+
+Note: Be sure this item is not assessed based on poor Internet connection or speed.
+
+Item 18: The material uses illustrations and photographs that are clear and uncluttered (P and A/V)
+Ratings: Disagree = 0       Agree = 1    No visual aids = N/A
+
+Not Applicable
+Choose N/A if the material has no visual aids.
+
+Explanation
+For the user to understand the content covered in an illustration or photograph, the image must be clear and uncluttered. If a material is not both clear and uncluttered, then you should choose "Disagree."
+
+Examples
+CHOOSE "AGREE"–A clear and uncluttered illustration
+
+Graphic showing simplified diagram of human nervous system highlighting the brain, spinal cord, and nerves.
+
+From Lead Poisoning: Words To Know From A to Z
+http://www.cdc.gov/nceh/lead/tools/LeadGlossary_508.pdf
+
+ 
+
+CHOOSE "DISAGREE"–A cluttered illustration
+
+Drawing of coronary arteries and what happens to them during a coronary balloon angioplasty.
+
+Taken from NIH, Explore Coronary Angioplasty, February 2012.
+http://www.nhlbi.nih.gov/health/health-topics/topics/angioplasty/howdone.html
+
+CHOOSE "DISAGREE"–An unclear photograph
+
+Blurry photo of doctor and patient. 
+
+Item 19: The material uses simple tables with short and clear row and column headings (P and A/V)
+Ratings: Disagree = 0       Agree = 1    No tables = N/A
+
+Not Applicable
+Choose N/A if the material has no tables.
+
+Examples
+CHOOSE "AGREE"–Clear row and column headings
+
+Table showing guide to UV index, with sun exposure category, index number, and sun protection messages.
+
+From Environmental Protection Agency. A Guide to the UV Index
+http://www.epa.gov/sunwise/doc/uviguide.pdf
+
+CHOOSE "DISAGREE"–Incomplete or unclear row and column headings
+
+Categories for Blood Pressure Levels in Adults
+(measured in millimeters of mercury, or mm Hg)
+
+Category	Systolic (top number)	 	Diastolic (bottom number)
+Normal	Less than 120	And	Less than 80
+Prehypertension	120-139	Or	80-89
+High blood pressure	 	 	 
+Stage 1	140-159	Or	90-99
+Stage 2	160 or higher	Or	100 or higher
+Taken from NIH, Explore High Blood Pressure, August 2012
+http://www.nhlbi.nih.gov/health/health-topics/topics/hbp/ 
