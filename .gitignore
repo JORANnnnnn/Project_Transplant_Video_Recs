@@ -2,12 +2,38 @@
 # Ignore Python's bytecode cache, which is specific to your machine.
 __pycache__/
 *.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
 
 # --- Virtual Environment ---
 # Ignore the entire virtual environment folder.
 venv/
 .venv/
 env/
+
+# --- Python Build and Distribution ---
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- Environment Variables ---
+.env
 
 # --- IDE and System Files ---
 # Ignore user-specific settings from code editors and operating systems.
