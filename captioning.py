@@ -5,6 +5,9 @@ import pandas as pd
 from typing import Tuple, List
 import time
 
+my_list = ['Nlt5PBrowKE', '4CCA9ojRAoU', 'vj-8ikMXPPk', '0H_xTEHRK0g', 'kOFVP0dPl-Q', 'tDrKOe8cs_0', 'awC12PFFUuM', 'tUZaEuBnycc', 'TelxHyKXGgw', 'Hjnd67MKhy0', '8uLx9drXbkA', 'jIwUwGE9aX8', 'SsXXGYdBdGk', 'X5HxpB8u0h8', 'V_I6Q56vtjE', 'h6l3CB3boLA', 'upTj79dRmZk', 'iEOa6VM8zHg', '1A51_BQpTUU', '9ItbKVrDOtQ', 'YJwkoX7KoOA', 'j163VvTQ3q8', 'w-H1eYdPhPI', 'wApvCj3HDAU', '03jZdOzvjSc', '9_VsEs_T1hA', '2zy9LV6ARSI', 'UOe4tcUhbQI', 'lxVGPACR5ok', 'V3O_FpF4ggo', '7YRFE8tg-gY', 'Q75-R4EMtZI', 'WA2U293-GRg', 'plNUfhcTJnI', 'Oj5N4H6Y9wg', 'uag1jIEuKTw', 'a4ibn9IVChI', '4pixAOy_yrU', 'CaPxqmkBDEg', 'vk3B1EmqhCM', 'GXyEZXJCoYc', 'GJ_g6aDAx9k', 'ShQNrFfEYYs', 'vlkASwAkHaE', 'y9EwhX7uyZ0', '6zP1g_Y_wSo', 'XV-pGEY4rxc', 'rP05zGjuZu8', 'N7kj0sfe6og', 'K69DQUq-HGo']
+my_set = set(my_list)
+
 def try_fetch_transcript(video_id: str, languages: Tuple[str, ...] = ("en", "en-US", "en-GB")) -> Tuple[bool, str]:
     """
     Works with both legacy (<1.x) and new (>=1.x) youtube-transcript-api.
@@ -88,6 +91,7 @@ def fetch_and_save_captions(db_path: str):
         WHERE CapV.video_id IS NULL OR CapV.has_transcript = 0;
         """
         videos_to_process_df = pd.read_sql_query(query_unprocessed_videos, conn)
+        videos_to_process_df = videos_to_process_df[videos_to_process_df['video_id'].isin(my_set)].reset_index(drop=True)
         
         if videos_to_process_df.empty:
             print("No new or uncaptioned credible videos found.")
