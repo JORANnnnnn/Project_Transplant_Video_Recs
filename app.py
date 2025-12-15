@@ -13,18 +13,33 @@ st.title("🔍 Search Transplant Education Videos")
 
 # --------------------------- Caching -------------------------------
 @st.cache_data(show_spinner=False)
-def load_recommended_data(file_path: Path) -> pd.DataFrame:
-    """Load Excel with top K recommendations (already filtered)."""
+def load_recommended_data(file_path: Path, sheet_name: str = None) -> pd.DataFrame:
+    """Load Excel and filter only LLM-recommended videos."""
     if not file_path.exists():
         st.error(f"File not found: {file_path}")
         st.stop()
     xls = pd.ExcelFile(file_path)
-    sheet = xls.sheet_names[0]
-    df = pd.read_excel(file_path, sheet_name=sheet)
+    if sheet_name is None:
+        sheet_name = xls.sheet_names[0]
+    df = pd.read_excel(file_path, sheet_name=sheet_name)
     df.columns = [str(c).strip() for c in df.columns]
     
-    # The merged topK dataset already contains only recommended videos
-    # No need to filter further
+    # Filter only recommended videos (handle merged column names with suffixes)
+    rec_col = None
+    if 'Recommendation_gpt_5_topk' in df.columns:
+        rec_col = 'Recommendation_gpt_5_topk'
+    elif 'Recommendation_gpt_5_full' in df.columns:
+        rec_col = 'Recommendation_gpt_5_full'
+    elif 'Recommendation_gpt_5' in df.columns:
+        rec_col = 'Recommendation_gpt_5'
+    elif 'Do you recommend this video or not' in df.columns:
+        rec_col = 'Do you recommend this video or not'
+    
+    if rec_col:
+        df = df[df[rec_col] == 1].copy()
+    else:
+        # If no recommendation column, assume all are recommended (topK sheets are pre-filtered)
+        pass
     
     return df.reset_index(drop=True)
 
@@ -171,8 +186,16 @@ def filter_contains_any(df: pd.DataFrame, cols: List[str], q: str) -> pd.DataFra
     return df[mask] if mask is not None else df
 
 # --------------------------- Load Data -------------------------------
-data_path = Path("youtube_videos_merged_topK.xlsx")
-df = load_recommended_data(data_path)
+# Use merged dataset if available, otherwise load and merge
+merged_file = Path("youtube_recommendations_topK_v3_merged.xlsx")
+if merged_file.exists():
+    data_path = merged_file
+    sheet_name = None  # Use first sheet
+else:
+    data_path = Path("youtube_videos_full_set (1).xlsx")
+    sheet_name = "youtube_recommendations_topK_v3"
+
+df = load_recommended_data(data_path, sheet_name=sheet_name)
 
 # Process data
 df['duration_seconds'] = df['duration'].apply(parse_iso8601_duration)
@@ -183,6 +206,11 @@ df['is_usa'] = df['channel_title'].apply(is_usa_organization)
 df['is_transplant_center'] = df['channel_title'].apply(is_transplant_center)
 df['is_nonprofit'] = df['channel_title'].apply(is_nonprofit)
 df['video_url'] = df['video_id'].apply(lambda vid: f"https://www.youtube.com/watch?v={vid}" if pd.notna(vid) else "")
+
+# Check if ranking columns exist (handle merged column names with suffixes)
+HAS_RANKING = (any('LLM Ranking' in c for c in df.columns) or 
+               'final_score' in df.columns or 
+               any('PEMAT Score' in c for c in df.columns))
 
 # Check transcript availability
 try:
@@ -218,10 +246,10 @@ def render_video_card(row: pd.Series, idx: int):
     if video_url:
         st.video(video_url)
     
-    # Get ranking metrics
-    llm_ranking = row.get('LLM Ranking')
+    # Get ranking metrics (handle merged column names with suffixes)
+    llm_ranking = row.get('LLM Ranking_topk') or row.get('LLM Ranking_full') or row.get('LLM Ranking')
     final_score = row.get('final_score')
-    pemat_score = row.get('PEMAT Score')
+    pemat_score = row.get('PEMAT Score_topk') or row.get('PEMAT Score_full') or row.get('PEMAT Score')
     is_understandable = row.get('is_understandable')
     
     # Metrics in columns (expanded to show ranking)
@@ -261,37 +289,43 @@ def render_video_card(row: pd.Series, idx: int):
         elif final_score is not None and pd.notna(final_score):
             st.caption(f"⭐ Score: {final_score:.3f}")
     
-    # Description
+    # Description (using button instead of expander to avoid nesting)
     if description and str(description).strip() and str(description) != 'nan':
-        with st.expander("📝 Description", expanded=False):
+        desc_key = f"show_desc_{video_id}_{idx}"
+        if desc_key not in st.session_state:
+            st.session_state[desc_key] = False
+        if st.button("📝 Show Description", key=f"btn_desc_{video_id}_{idx}"):
+            st.session_state[desc_key] = not st.session_state[desc_key]
+        if st.session_state[desc_key]:
             st.write(str(description)[:500] + ("..." if len(str(description)) > 500 else ""))
     
-    # Transcript
+    # Transcript (using button instead of expander to avoid nesting)
     if HAVE_TRANSCRIPT_API and video_id:
         transcript_key = f"transcript_{video_id}_{idx}"
+        show_tx_key = f"show_tx_{video_id}_{idx}"
         if transcript_key not in st.session_state:
             st.session_state[transcript_key] = None
+        if show_tx_key not in st.session_state:
+            st.session_state[show_tx_key] = False
         
-        with st.expander("📄 View Transcript", expanded=False):
+        if st.button("📄 View Transcript", key=f"btn_tx_{video_id}_{idx}"):
+            st.session_state[show_tx_key] = not st.session_state[show_tx_key]
+        
+        if st.session_state[show_tx_key]:
             if st.button("Fetch Transcript", key=f"fetch_tx_{video_id}_{idx}"):
                 with st.spinner("Fetching transcript..."):
                     ok, text = try_fetch_transcript(video_id)
                     if ok:
                         st.session_state[transcript_key] = text
-                        st.text_area("Transcript", value=text, height=300, key=f"tx_area_{video_id}_{idx}")
-                        st.download_button(
-                            "Download Transcript",
-                            data=text,
-                            file_name=f"{video_id}_transcript.txt",
-                            key=f"dl_{video_id}_{idx}"
-                        )
                     else:
+                        st.session_state[transcript_key] = None
                         # Display error message (may contain markdown formatting)
                         if "⚠️" in text or "**" in text:
                             st.markdown(text)
                         else:
                             st.error(text)
-            elif st.session_state[transcript_key]:
+            
+            if st.session_state[transcript_key]:
                 st.text_area("Transcript", value=st.session_state[transcript_key], height=300, key=f"tx_area_{video_id}_{idx}")
                 st.download_button(
                     "Download Transcript",
@@ -300,7 +334,7 @@ def render_video_card(row: pd.Series, idx: int):
                     key=f"dl_{video_id}_{idx}"
                 )
     elif video_id:
-        with st.expander("📄 View Transcript", expanded=False):
+        if st.button("📄 View Transcript", key=f"btn_tx_info_{video_id}_{idx}"):
             st.info("Transcript feature requires 'youtube-transcript-api' package.")
     
     # External link
@@ -340,19 +374,19 @@ with col2:
 
 with col3:
     st.subheader("📊 Sort By")
-    sort_options = [
-        "LLM Ranking (Best First)",
-        "Final Score (Highest First)",
-        "PEMAT Score (Highest First)",
-        "Engagement Score (Most Reputable)",
-        "Views (Most Watched)",
-        "Likes (Most Liked)",
-        "Comments (Most Discussed)",
-        "Duration (Longest First)",
-        "Duration (Shortest First)",
-        "Channel Name (A→Z)",
-        "Title (A→Z)"
-    ]
+    sort_options = ["Engagement Score (Most Reputable)", "Views (Most Watched)", "Likes (Most Liked)", 
+                    "Comments (Most Discussed)", "Duration (Longest First)", "Duration (Shortest First)",
+                    "Channel Name (A→Z)", "Title (A→Z)"]
+    
+    # Add ranking options only if ranking columns exist (handle merged column names)
+    if HAS_RANKING:
+        if any('LLM Ranking' in c for c in df.columns):
+            sort_options.insert(0, "LLM Ranking (Best First)")
+        if 'final_score' in df.columns:
+            sort_options.insert(0, "Final Score (Highest First)")
+        if any('PEMAT Score' in c for c in df.columns):
+            sort_options.insert(0, "PEMAT Score (Highest First)")
+    
     sort_choice = st.selectbox("Sort videos by", sort_options, key="sort_choice")
 
 with col4:
@@ -389,13 +423,16 @@ if org_nonprofit_only:
 if length_filter:
     work = work[work['duration_bucket'].isin(length_filter)]
 
-# Sorting
-if sort_choice == "LLM Ranking (Best First)":
-    work = work.sort_values('LLM Ranking', ascending=True, na_position='last')  # Lower rank number = better
-elif sort_choice == "Final Score (Highest First)":
+# Sorting (handle merged column names with suffixes)
+llm_rank_col = next((c for c in work.columns if 'LLM Ranking' in c), None)
+pemat_col = next((c for c in work.columns if 'PEMAT Score' in c), None)
+
+if sort_choice == "LLM Ranking (Best First)" and llm_rank_col:
+    work = work.sort_values(llm_rank_col, ascending=True, na_position='last')  # Lower rank number = better
+elif sort_choice == "Final Score (Highest First)" and 'final_score' in work.columns:
     work = work.sort_values('final_score', ascending=False, na_position='last')
-elif sort_choice == "PEMAT Score (Highest First)":
-    work = work.sort_values('PEMAT Score', ascending=False, na_position='last')
+elif sort_choice == "PEMAT Score (Highest First)" and pemat_col:
+    work = work.sort_values(pemat_col, ascending=False, na_position='last')
 elif sort_choice == "Engagement Score (Most Reputable)":
     work = work.sort_values('engagement_score', ascending=False)
 elif sort_choice == "Views (Most Watched)":
@@ -420,9 +457,11 @@ elif sort_choice == "Title (A→Z)":
 work = work.head(max_videos).reset_index(drop=True)
 
 # --------------------------- Group by Category (LLM Categories) -------------------------------
-# Check for category column (could be from topK or gpt5 merge)
+# Check for category column (handle merged column names with suffixes)
 if 'Category_gpt_5_topk' in work.columns:
     category_col = 'Category_gpt_5_topk'
+elif 'Category_gpt_5_full' in work.columns:
+    category_col = 'Category_gpt_5_full'
 elif 'Category_gpt_5_gpt5' in work.columns:
     category_col = 'Category_gpt_5_gpt5'
 elif 'Category_gpt_5' in work.columns:
@@ -468,9 +507,11 @@ if category_col and not work.empty:
                 for channel in sorted(channels):
                     channel_videos = cat_videos[cat_videos['channel_title'] == channel]
                     
-                    with st.expander(f"🏥 {channel} ({len(channel_videos)} videos)", expanded=False):
-                        for idx, row in channel_videos.iterrows():
-                            render_video_card(row, idx)
+                    # Use markdown header instead of nested expander
+                    st.markdown(f"#### 🏥 {channel} ({len(channel_videos)} videos)")
+                    for idx, row in channel_videos.iterrows():
+                        render_video_card(row, idx)
+                    st.markdown("---")  # Separator between channels
     else:
         st.info("No videos found matching your criteria.")
         work = pd.DataFrame()
@@ -483,9 +524,11 @@ else:
         for channel in sorted(channels):
             channel_videos = work[work['channel_title'] == channel]
             
-            with st.expander(f"🏥 {channel} ({len(channel_videos)} videos)", expanded=False):
-                for idx, row in channel_videos.iterrows():
-                    render_video_card(row, idx)
+            # Use markdown header instead of expander
+            st.markdown(f"#### 🏥 {channel} ({len(channel_videos)} videos)")
+            for idx, row in channel_videos.iterrows():
+                render_video_card(row, idx)
+            st.markdown("---")  # Separator between channels
     else:
         st.info("No videos found matching your criteria.")
 
